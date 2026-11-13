@@ -1,0 +1,15 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+out/
+# Real statements must never be committed.
+tests/corpus/private/
+# Web app data: encrypted statements and the dev key.
+data/
+# Frontend dependencies and build output (built in CI / Docker)
+frontend/node_modules/
+stmt/web/static/app/
+.env.staging
+.env.production
