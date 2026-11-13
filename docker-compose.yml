@@ -1,0 +1,49 @@
+version: "3.9"
+
+services:
+  minio:
+    image: cgr.dev/chainguard/minio:latest
+    container_name: ghsignal_minio
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    environment:
+      MINIO_ROOT_USER: ghsignal 
+      MINIO_ROOT_PASSWORD: ghsignal_dev_password
+    volumes:
+      - minio_data:/data
+    command: server /data -console-address ":9001"
+    healthcheck:
+      test: ["CMD", "mc", "ready", "local"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+  
+  minio_init:
+    image: cgr.dev/chainguard/minio-client:latest-dev
+    depends_on:
+      minio:
+        condition: service_healthy 
+    entrypoint: >
+      /bin/sh -c "
+      mc alias set local http://minio:9000 ghsignal_dev_password &&
+      mc mb -p local/github-signal-raw &&
+      mc mb -p local/github-signal-curated &&
+      exit 0;
+      "
+
+  postgres:
+    image: postgres:16
+    container_name: ghsignal_postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: ghsignal
+      POSTGRES_PASSWORD: ghsignal_dev_password
+      POSTGRES_DB: ghsignal_meta
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  minio_data:
+  postgres_data:

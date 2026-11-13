@@ -1,0 +1,17 @@
+README.md
+pyproject.toml
+src/__init__.py
+src/config.py
+src/github_signal_platform.egg-info/PKG-INFO
+src/github_signal_platform.egg-info/SOURCES.txt
+src/github_signal_platform.egg-info/dependency_links.txt
+src/github_signal_platform.egg-info/requires.txt
+src/github_signal_platform.egg-info/top_level.txt
+src/ingestion/__init__.py
+src/ingestion/cli.py
+src/ingestion/gharchive.py
+src/ingestion/metadata.py
+src/ingestion/writer.py
+src/storage/__init__.py
+src/storage/s3_client.py
+test/test_ingestion.py
