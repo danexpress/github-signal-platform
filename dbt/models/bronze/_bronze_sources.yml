@@ -1,0 +1,24 @@
+version: 2
+
+sources:
+  - name: bronze
+    description: "Raw GH Archive events landed by the Python ingestion pipeline"
+    meta:
+      external_location: "s3://github-signal-raw/raw/gharchive/**/*.parquet"
+    tables:
+      - name: gharchive_events
+        description: "One row per GitHub event, partitioned by year/month/day/hour"
+        external:
+          location: "s3://github-signal-raw/raw/gharchive/**/*.parquet"
+        columns:
+          - name: id
+            description: "GitHub event ID — unique per event, used for dedup"
+          - name: type
+            description: "Event type (PushEvent, PullRequestEvent, WatchEvent, etc.)"
+          - name: actor_id
+          - name: actor_login
+          - name: repo_id
+          - name: repo_name
+          - name: created_at
+          - name: payload_json
+            description: "Raw JSON payload preserved for later enrichment"
