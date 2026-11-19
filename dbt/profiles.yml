@@ -1,0 +1,10 @@
+github_signal:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: ../data/warehouse.duckdb
+      extensions:
+        - httpfs
+        - parquet
+      external_root: '../data/silver'

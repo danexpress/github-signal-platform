@@ -1,0 +1,46 @@
+version: 2
+
+models:
+  - name: silver_events
+    description: "Deduped, typed, flattened GitHub events. Grain: one row per event_id."
+    columns:
+      - name: event_id
+        description: "GitHub event ID (globally unique)"
+        tests:
+          - unique
+          - not_null
+      - name: event_type
+        tests:
+          - not_null
+          - accepted_values:
+              arguments: 
+                values:
+                  - PushEvent
+                  - PullRequestEvent
+                  - IssuesEvent
+                  - IssueCommentEvent
+                  - WatchEvent
+                  - ForkEvent
+                  - CreateEvent
+                  - DeleteEvent
+                  - ReleaseEvent
+                  - PublicEvent
+                  - MemberEvent
+                  - GollumEvent
+                  - CommitCommentEvent
+                  - PullRequestReviewEvent
+                  - PullRequestReviewCommentEvent
+              config:
+                severity: warn   # warn not error — new event types may appear
+      - name: actor_id
+        tests:
+          - not_null
+      - name: repo_id
+        tests:
+          - not_null
+      - name: event_date
+        tests:
+          - not_null
+      - name: actor_is_bot
+        tests:
+          - not_null
