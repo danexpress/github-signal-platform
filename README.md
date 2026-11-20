@@ -46,6 +46,7 @@ Infra:      Docker Compose for MinIO + Postgres
 ## Stack
 
 - **Ingestion:** Python 3.13, boto3, pyarrow, httpx, tenacity
+- **Enrichment:** GitHub REST API (httpx), Postgres `dim_actors` (psycopg2)
 - **Metadata:** Postgres (idempotency tracking per partition)
 - **Lakehouse:** MinIO (S3-compatible), Parquet, Hive partitioning
 - **Transformation:** dbt-duckdb, DuckDB httpfs extension
@@ -57,6 +58,7 @@ Infra:      Docker Compose for MinIO + Postgres
 |-------|-------|------|--------|
 | Bronze | One row per GitHub event, partitioned `year=YYYY/month=MM/day=DD/hour=HH` | ~2M per day | ✅ Idempotent, retry-on-failure, metadata-tracked |
 | Silver | One row per unique event, typed + flattened + bot-flagged | ~2M per day | ✅ Deduped on event_id, DQ tested |
+| Silver | `silver_actors_enriched`: events + GitHub profile + V1 reputation score | ~2M per day | ✅ Postgres `dim_actors` joined via DuckDB attach |
 | Gold | Analyst-ready aggregates | — | 🎯 In progress — reputation-weighted trending |
 
 ## Production-grade patterns implemented
@@ -99,12 +101,27 @@ python -m src.ingestion.cli backfill \
 cd dbt
 dbt run --select silver_events
 dbt test --select silver_events
+cd ..
+
+# Enrich actors with GitHub profile metadata (needs GITHUB_TOKEN in .env).
+# Scope: human actors with Watch/Fork/PR events, busiest first. Writes to
+# Postgres dim_actors; resumable, skips actors enriched in the last 30 days.
+# REST allows 5,000 req/h, so a full day (~40k actors) takes ~8 hours.
+python -m src.enrichment.cli enrich-starrers --max 100 --dry-run   # plan only
+python -m src.enrichment.cli enrich-starrers --max 100
+
+# Join events to actor reputation, then check the F1 hypothesis
+cd dbt
+dbt build --select silver_actors_enriched
+cd ..
+python scripts/validate_enrichment.py
+
+# Tests (GitHub API is mocked; store tests need Postgres running)
+pytest tests/
 ```
 
 ## What's next
 
-- `silver_actors_enriched`: GitHub REST API enrichment (account age, follower 
-  count, prior activity)
 - `gold_authentic_trending`: reputation-weighted trending signal
 - Great Expectations contracts on top of dbt tests
 - Streaming layer (Kafka + Flink) for real-time windowed counts

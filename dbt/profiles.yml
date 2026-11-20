@@ -7,4 +7,11 @@ github_signal:
       extensions:
         - httpfs
         - parquet
+        - postgres
       external_root: '../data/silver'
+      # Postgres metadata DB, attached read-only so models can join dim_actors
+      attach:
+        - path: "{{ env_var('METADATA_DB_URL', 'postgresql://ghsignal:ghsignal_dev_password@localhost:5432/ghsignal_meta') }}"
+          type: postgres
+          alias: meta
+          read_only: true

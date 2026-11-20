@@ -44,3 +44,28 @@ models:
       - name: actor_is_bot
         tests:
           - not_null
+  - name: silver_actors_enriched
+    description: >
+      silver_events LEFT JOIN dim_actors: one row per event with the actor's
+      GitHub profile and a V1 heuristic reputation_score (not a trained model).
+    columns:
+      - name: event_id
+        tests:
+          - unique
+          - not_null
+      - name: is_enriched
+        tests:
+          - not_null
+      - name: enrichment_status
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['found', 'missing']
+      - name: reputation_tier
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['high', 'medium', 'low', 'missing', 'unenriched']
+      - name: reputation_score
+        description: "~0-5. Null unless enrichment_status = 'found'."

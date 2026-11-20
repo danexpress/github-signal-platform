@@ -14,6 +14,7 @@ class Config:
     s3_region: str
     metadata_db_url: str
     gharchive_base_url: str
+    github_token: str | None = None
 
     @classmethod
     def from_env(cls) -> "Config":
@@ -27,4 +28,5 @@ class Config:
             gharchive_base_url=os.environ.get(
                 "GHARCHIVE_BASE_URL", "https://data.gharchive.org"
             ),
+            github_token=os.environ.get("GITHUB_TOKEN"),
         )
