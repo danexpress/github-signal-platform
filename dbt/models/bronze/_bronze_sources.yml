@@ -22,3 +22,11 @@ sources:
           - name: created_at
           - name: payload_json
             description: "Raw JSON payload preserved for later enrichment"
+
+  - name: enrichment
+    description: "GitHub profile metadata, written by `python -m src.enrichment.cli enrich-starrers`"
+    database: meta      # Postgres, attached in profiles.yml
+    schema: public
+    tables:
+      - name: dim_actors
+        description: "One row per enriched actor (upserted). status = found | missing (404: deleted/suspended)."
