@@ -1,0 +1,24 @@
+version: 2
+
+models:
+  - name: gold_trending_repos
+    description: >
+      Trending repositories scored by weighted event activity (not raw stars).
+      Addresses finding F1: raw star velocity surfaces drive_by noise, so
+      this score weights fork, PRs, and issues higher than stars).
+      Bots filtered out.
+    columns:
+      - name: repo_id
+        tests: 
+          - unique
+          - not_null
+      - name: repo_name 
+        tests:
+          - not_null
+      - name: trending_score
+        tests:
+          - not_null
+      - name: is_stars_only
+        description: >
+          True if the repo has > 20 stars but zero forks/PRs/issues from humans.
+          Strong star-bomb signal.

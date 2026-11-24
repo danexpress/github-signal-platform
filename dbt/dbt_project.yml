@@ -16,3 +16,7 @@ models:
     silver:
       +materialized: external     # dbt-duckdb writes Parquet to disk/S3
       +format: parquet
+    gold:
+      +materialized: external
+      +format: parquet
+      

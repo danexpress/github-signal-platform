@@ -1,7 +1,7 @@
 {{
     config(
         materialized='external',
-        location='s3://github-signal-raw/silver/events',
+        location='s3://github-signal-raw/silver/events/data.parquet',
         format='parquet',
         options={'overwrite_or_ignore': true}
     )
