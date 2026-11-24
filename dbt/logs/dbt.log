@@ -8403,3 +8403,1976 @@ having count(*) > 1
 [0m03:09:23.792993 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bb7bd10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c6a3800>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c6a3e30>]}
 [0m03:09:23.793131 [debug] [MainThread]: Flushing usage events
 [0m03:09:24.285667 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m03:24:32.282528 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a7f5fd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ba2f750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ba2fb10>]}
+
+
+============================== 03:24:32.285132 | 14e47ebe-4b48-44a6-8fd9-870b7b149709 ==============================
+[0m03:24:32.285132 [info ] [MainThread]: Running with dbt=1.11.17
+[0m03:24:32.285385 [debug] [MainThread]: running dbt with arguments {'log_path': '/Users/fredoffei/Documents/github-signal-platform/dbt/logs', 'debug': 'False', 'static_parser': 'True', 'invocation_command': 'dbt run --select gold_authentic_trending', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'fail_fast': 'False', 'introspect': 'True', 'version_check': 'True', 'warn_error': 'None', 'log_cache_events': 'False', 'empty': 'False', 'profiles_dir': '/Users/fredoffei/Documents/github-signal-platform/dbt', 'partial_parse': 'True', 'indirect_selection': 'eager', 'cache_selected_only': 'False', 'write_json': 'True', 'use_colors': 'True', 'quiet': 'False', 'target_path': 'None', 'log_format': 'default', 'use_experimental_parser': 'False', 'send_anonymous_usage_stats': 'True', 'printer_width': '80', 'no_print': 'None'}
+[0m03:24:32.417309 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '14e47ebe-4b48-44a6-8fd9-870b7b149709', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10acb95b0>]}
+[0m03:24:32.440328 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '14e47ebe-4b48-44a6-8fd9-870b7b149709', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bb9ebe0>]}
+[0m03:24:32.441777 [info ] [MainThread]: Registered adapter: duckdb=1.11.1
+[0m03:24:32.482865 [debug] [MainThread]: checksum: 6b6411fb925d7fe017d7428f9d9af996704b52c1bbfb75b401b39f0bcbc3f5dc, vars: {}, profile: , target: , version: 1.11.17
+[0m03:24:32.553180 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 1 files added, 1 files changed.
+[0m03:24:32.553474 [debug] [MainThread]: Partial parsing: added file: github_signal://models/gold/gold_authentic_trending.sql
+[0m03:24:32.553698 [debug] [MainThread]: Partial parsing: updated file: github_signal://models/gold/_gold_models.yml
+[0m03:24:32.757524 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '14e47ebe-4b48-44a6-8fd9-870b7b149709', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c14fd50>]}
+[0m03:24:32.805100 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/fredoffei/Documents/github-signal-platform/dbt/target/manifest.json
+[0m03:24:32.806381 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/fredoffei/Documents/github-signal-platform/dbt/target/semantic_manifest.json
+[0m03:24:32.813910 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '14e47ebe-4b48-44a6-8fd9-870b7b149709', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c12b2f0>]}
+[0m03:24:32.814151 [info ] [MainThread]: Found 6 models, 23 data tests, 1 operation, 2 sources, 513 macros
+[0m03:24:32.814300 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '14e47ebe-4b48-44a6-8fd9-870b7b149709', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c4d8ad0>]}
+[0m03:24:32.815045 [info ] [MainThread]: 
+[0m03:24:32.815185 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m03:24:32.815289 [info ] [MainThread]: 
+[0m03:24:32.815486 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m03:24:32.815833 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_warehouse'
+[0m03:24:32.843610 [debug] [ThreadPool]: Using duckdb connection "list_warehouse"
+[0m03:24:32.843828 [debug] [ThreadPool]: On list_warehouse: /* {"app": "dbt", "dbt_version": "1.11.17", "profile_name": "github_signal", "target_name": "dev", "connection_name": "list_warehouse"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"warehouse"'
+    
+  
+  
+[0m03:24:32.843956 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m03:24:33.023264 [debug] [ThreadPool]: SQL status: OK in 0.179 seconds
+[0m03:24:33.024064 [debug] [ThreadPool]: On list_warehouse: Close
+[0m03:24:33.024490 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_warehouse, now create_warehouse_main)
+[0m03:24:33.024738 [debug] [ThreadPool]: Creating schema "database: "warehouse"
+schema: "main"
+"
+[0m03:24:33.028012 [debug] [ThreadPool]: Using duckdb connection "create_warehouse_main"
+[0m03:24:33.028255 [debug] [ThreadPool]: On create_warehouse_main: /* {"app": "dbt", "dbt_version": "1.11.17", "profile_name": "github_signal", "target_name": "dev", "connection_name": "create_warehouse_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='warehouse'
+        and type != 'duckdb'
+    
+  
+[0m03:24:33.028397 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m03:24:33.029931 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m03:24:33.030504 [debug] [ThreadPool]: Using duckdb connection "create_warehouse_main"
+[0m03:24:33.030634 [debug] [ThreadPool]: On create_warehouse_main: BEGIN
+[0m03:24:33.031012 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m03:24:33.031143 [debug] [ThreadPool]: Using duckdb connection "create_warehouse_main"
+[0m03:24:33.031249 [debug] [ThreadPool]: On create_warehouse_main: /* {"app": "dbt", "dbt_version": "1.11.17", "profile_name": "github_signal", "target_name": "dev", "connection_name": "create_warehouse_main"} */
+
+    
+    
+        create schema if not exists "warehouse"."main"
+    
+[0m03:24:33.031810 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m03:24:33.032179 [debug] [ThreadPool]: On create_warehouse_main: COMMIT
+[0m03:24:33.032309 [debug] [ThreadPool]: Using duckdb connection "create_warehouse_main"
+[0m03:24:33.032419 [debug] [ThreadPool]: On create_warehouse_main: COMMIT
+[0m03:24:33.032596 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m03:24:33.032714 [debug] [ThreadPool]: On create_warehouse_main: Close
+[0m03:24:33.034888 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_warehouse_main, now list_warehouse_main)
+[0m03:24:33.037306 [debug] [ThreadPool]: Using duckdb connection "list_warehouse_main"
+[0m03:24:33.037444 [debug] [ThreadPool]: On list_warehouse_main: BEGIN
+[0m03:24:33.037546 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m03:24:33.037764 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m03:24:33.037881 [debug] [ThreadPool]: Using duckdb connection "list_warehouse_main"
+[0m03:24:33.037998 [debug] [ThreadPool]: On list_warehouse_main: /* {"app": "dbt", "dbt_version": "1.11.17", "profile_name": "github_signal", "target_name": "dev", "connection_name": "list_warehouse_main"} */
+select
+      'warehouse' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'warehouse'
+  
+[0m03:24:33.050181 [debug] [ThreadPool]: SQL status: OK in 0.012 seconds
+[0m03:24:33.051055 [debug] [ThreadPool]: On list_warehouse_main: ROLLBACK
+[0m03:24:33.051815 [debug] [ThreadPool]: On list_warehouse_main: Close
+[0m03:24:33.052283 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '14e47ebe-4b48-44a6-8fd9-870b7b149709', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c547d40>]}
+[0m03:24:33.052484 [debug] [MainThread]: Using duckdb connection "master"
+[0m03:24:33.052594 [debug] [MainThread]: On master: BEGIN
+[0m03:24:33.052702 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m03:24:33.052913 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m03:24:33.053043 [debug] [MainThread]: On master: COMMIT
+[0m03:24:33.053156 [debug] [MainThread]: Using duckdb connection "master"
+[0m03:24:33.053256 [debug] [MainThread]: On master: COMMIT
+[0m03:24:33.053417 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m03:24:33.056471 [debug] [MainThread]: Writing injected SQL for node "operation.github_signal.github_signal-on-run-start-0"
+[0m03:24:33.058495 [info ] [MainThread]: 1 of 1 START hook: github_signal.on-run-start.0 ................................ [RUN]
+[0m03:24:33.058686 [debug] [MainThread]: Using duckdb connection "master"
+[0m03:24:33.058815 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.11.17", "profile_name": "github_signal", "target_name": "dev", "connection_name": "master"} */
+
+  INSTALL httpfs;
+  LOAD httpfs;
+  CREATE OR REPLACE SECRET minio_s3 (
+    TYPE S3,
+    KEY_ID 'ghsignal',
+    SECRET 'ghsignal_dev_password',
+    REGION 'us-east-1',
+    ENDPOINT 'localhost:9000',
+    URL_STYLE 'path',
+    USE_SSL false
+  );
+
+[0m03:24:33.059716 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m03:24:33.060101 [info ] [MainThread]: 1 of 1 OK hook: github_signal.on-run-start.0 ................................... [[32mOK[0m in 0.01s]
+[0m03:24:33.060220 [info ] [MainThread]: 
+[0m03:24:33.060334 [debug] [MainThread]: On master: Close
+[0m03:24:33.061475 [debug] [Thread-1 (]: Began running node model.github_signal.gold_authentic_trending
+[0m03:24:33.061698 [info ] [Thread-1 (]: 1 of 1 START sql external model main.gold_authentic_trending ................... [RUN]
+[0m03:24:33.061875 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_warehouse_main, now model.github_signal.gold_authentic_trending)
+[0m03:24:33.062005 [debug] [Thread-1 (]: Began compiling node model.github_signal.gold_authentic_trending
+[0m03:24:33.063662 [debug] [Thread-1 (]: Writing injected SQL for node "model.github_signal.gold_authentic_trending"
+[0m03:24:33.064004 [debug] [Thread-1 (]: Began executing node model.github_signal.gold_authentic_trending
+[0m03:24:33.064819 [debug] [Thread-1 (]: Using duckdb connection "model.github_signal.gold_authentic_trending"
+[0m03:24:33.064965 [debug] [Thread-1 (]: On model.github_signal.gold_authentic_trending: /* {"app": "dbt", "dbt_version": "1.11.17", "profile_name": "github_signal", "target_name": "dev", "node_id": "model.github_signal.gold_authentic_trending"} */
+select database_name, type from duckdb_databases()
+[0m03:24:33.065083 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m03:24:33.065496 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m03:24:33.065994 [debug] [Thread-1 (]: Using duckdb connection "model.github_signal.gold_authentic_trending"
+[0m03:24:33.066129 [debug] [Thread-1 (]: On model.github_signal.gold_authentic_trending: /* {"app": "dbt", "dbt_version": "1.11.17", "profile_name": "github_signal", "target_name": "dev", "node_id": "model.github_signal.gold_authentic_trending"} */
+
+                    select table_name, constraint_type from duckdb_constraints()
+                    where lower(database_name) = lower('warehouse')
+                      and lower(schema_name) = lower('main')
+                      and constraint_type in ('PRIMARY KEY', 'UNIQUE', 'FOREIGN KEY')
+                    
+[0m03:24:33.072255 [debug] [Thread-1 (]: SQL status: OK in 0.006 seconds
+[0m03:24:33.096622 [debug] [Thread-1 (]: Using duckdb connection "model.github_signal.gold_authentic_trending"
+[0m03:24:33.096851 [debug] [Thread-1 (]: On model.github_signal.gold_authentic_trending: BEGIN
+[0m03:24:33.097147 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m03:24:33.097312 [debug] [Thread-1 (]: Using duckdb connection "model.github_signal.gold_authentic_trending"
+[0m03:24:33.097516 [debug] [Thread-1 (]: On model.github_signal.gold_authentic_trending: /* {"app": "dbt", "dbt_version": "1.11.17", "profile_name": "github_signal", "target_name": "dev", "node_id": "model.github_signal.gold_authentic_trending"} */
+
+    
+
+    create  table
+      "warehouse"."main"."gold_authentic_trending__dbt_tmp"
+  
+    
+    as (
+      -- depends_on: "warehouse"."main"."silver_events"
+
+
+
+with events as (
+    select *
+    from read_parquet('s3://github-signal-raw/silver/events/*.parquet')
+    where actor_is_bot = false
+      and repo_id is not null
+),
+
+actors as (
+    select *
+    from read_parquet('s3://github-signal-raw/silver/actors_enriched/data.parquet')
+),
+
+actors_scored as (
+    select
+        actor_id,
+        -- Reputation score (computed here so we don't depend on what's in actors_enriched)
+        -- Range roughly 0 to 5+
+        case
+            when coalesce(status, 'missing') != 'enriched' then 0.1       -- unenriched baseline
+            when coalesce(account_type, 'User') = 'Organization' then 2.5  -- orgs are real entities
+            else
+                0.3 * ln(coalesce(followers, 0) + 1)
+                + 0.2 * ln(coalesce(public_repos, 0) + 1)
+                + 0.1 * (
+                    cast(coalesce(has_bio, false) as int)
+                    + cast(coalesce(has_company, false) as int)
+                    + cast(coalesce(has_location, false) as int)
+                    + cast(coalesce(has_custom_avatar, false) as int)
+                )
+                + 0.4 * least(
+                    date_diff('year', coalesce(github_created_at, current_timestamp)::timestamp, current_timestamp),
+                    3.0
+                )
+        end as reputation_score
+    from actors
+),
+
+event_weights(event_type, weight) as (
+    values
+        ('WatchEvent', 3.0),
+        ('ForkEvent', 5.0),
+        ('PullRequestEvent', 10.0),
+        ('IssuesEvent', 2.0),
+        ('ReleaseEvent', 15.0),
+        ('PullRequestReviewEvent', 4.0)
+),
+
+weighted_events as (
+    select
+        e.repo_id,
+        e.repo_name,
+        e.event_type,
+        e.actor_id,
+        e.created_at,
+        w.weight as event_weight,
+        coalesce(a.reputation_score, 0.1) as actor_reputation,
+        w.weight * coalesce(a.reputation_score, 0.1) as authentic_event_score
+    from events e
+    inner join event_weights w on e.event_type = w.event_type
+    left join actors_scored a on e.actor_id = a.actor_id
+    where (e.event_type != 'PullRequestEvent' or e.payload_action = 'opened')
+      and (e.event_type != 'IssuesEvent' or e.payload_action = 'opened')
+),
+
+repo_scored as (
+    select
+        repo_id,
+        arg_max(repo_name, created_at) as repo_name,
+        sum(authentic_event_score) as authentic_score,
+
+        -- Score contributions by event type
+        sum(case when event_type = 'WatchEvent' then authentic_event_score else 0 end)             as star_score,
+        sum(case when event_type = 'ForkEvent' then authentic_event_score else 0 end)              as fork_score,
+        sum(case when event_type = 'PullRequestEvent' then authentic_event_score else 0 end)       as pr_score,
+        sum(case when event_type = 'IssuesEvent' then authentic_event_score else 0 end)            as issue_score,
+        sum(case when event_type = 'ReleaseEvent' then authentic_event_score else 0 end)           as release_score,
+        sum(case when event_type = 'PullRequestReviewEvent' then authentic_event_score else 0 end) as pr_review_score,
+
+        -- Raw counts (for side-by-side comparison with gold_trending_repos)
+        count(*) filter (where event_type = 'WatchEvent')              as raw_stars,
+        count(*) filter (where event_type = 'ForkEvent')               as raw_forks,
+        count(*) filter (where event_type = 'PullRequestEvent')        as raw_pr_opens,
+        count(*) filter (where event_type = 'IssuesEvent')             as raw_issue_opens,
+        count(*) filter (where event_type = 'ReleaseEvent')            as raw_releases,
+
+        -- Average reputation of all actors touching this repo (high = quality audience)
+        round(avg(actor_reputation)::numeric, 3) as avg_actor_reputation,
+        round(max(actor_reputation)::numeric, 3) as max_actor_reputation,
+
+        count(distinct actor_id) as unique_actors,
+
+        min(created_at) as first_event_at,
+        max(created_at) as last_event_at
+    from weighted_events
+    group by repo_id
+)
+
+select
+    repo_id,
+    repo_name,
+    round(authentic_score::numeric, 2) as authentic_score,
+    avg_actor_reputation,
+    max_actor_reputation,
+    unique_actors,
+    round(star_score::numeric, 2)      as star_score,
+    round(fork_score::numeric, 2)      as fork_score,
+    round(pr_score::numeric, 2)        as pr_score,
+    round(issue_score::numeric, 2)     as issue_score,
+    round(release_score::numeric, 2)   as release_score,
+    round(pr_review_score::numeric, 2) as pr_review_score,
+    raw_stars,
+    raw_forks,
+    raw_pr_opens,
+    raw_issue_opens,
+    raw_releases,
+    first_event_at,
+    last_event_at,
+    current_timestamp as _processed_at
+from repo_scored
+where authentic_score > 0
+order by authentic_score desc
+    );
+    
+  
+[0m03:24:33.125361 [debug] [Thread-1 (]: DuckDB adapter: duckdb error: Binder Error: Referenced column "status" not found in FROM clause!
+Candidate bindings: "reputation_score", "has_custom_avatar", "user_type", "event_type"
+
+LINE 29:             when coalesce(account_type, 'User') = 'Organiza...
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0m03:24:33.125677 [debug] [Thread-1 (]: DuckDB adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.11.17", "profile_name": "github_signal", "target_name": "dev", "node_id": "model.github_signal.gold_authentic_trending"} */
+
+    
+
+    create  table
+      "warehouse"."main"."gold_authentic_trending__dbt_tmp"
+  
+    
+    as (
+      -- depends_on: "warehouse"."main"."silver_events"
+
+
+
+with events as (
+    select *
+    from read_parquet('s3://github-signal-raw/silver/events/*.parquet')
+    where actor_is_bot = false
+      and repo_id is not null
+),
+
+actors as (
+    select *
+    from read_parquet('s3://github-signal-raw/silver/actors_enriched/data.parquet')
+),
+
+actors_scored as (
+    select
+        actor_id,
+        -- Reputation score (computed here so we don't depend on what's in actors_enriched)
+        -- Range roughly 0 to 5+
+        case
+            when coalesce(status, 'missing') != 'enriched' then 0.1       -- unenriched baseline
+            when coalesce(account_type, 'User') = 'Organization' then 2.5  -- orgs are real entities
+            else
+                0.3 * ln(coalesce(followers, 0) + 1)
+                + 0.2 * ln(coalesce(public_repos, 0) + 1)
+                + 0.1 * (
+                    cast(coalesce(has_bio, false) as int)
+                    + cast(coalesce(has_company, false) as int)
+                    + cast(coalesce(has_location, false) as int)
+                    + cast(coalesce(has_custom_avatar, false) as int)
+                )
+                + 0.4 * least(
+                    date_diff('year', coalesce(github_created_at, current_timestamp)::timestamp, current_timestamp),
+                    3.0
+                )
+        end as reputation_score
+    from actors
+),
+
+event_weights(event_type, weight) as (
+    values
+        ('WatchEvent', 3.0),
+        ('ForkEvent', 5.0),
+        ('PullRequestEvent', 10.0),
+        ('IssuesEvent', 2.0),
+        ('ReleaseEvent', 15.0),
+        ('PullRequestReviewEvent', 4.0)
+),
+
+weighted_events as (
+    select
+        e.repo_id,
+        e.repo_name,
+        e.event_type,
+        e.actor_id,
+        e.created_at,
+        w.weight as event_weight,
+        coalesce(a.reputation_score, 0.1) as actor_reputation,
+        w.weight * coalesce(a.reputation_score, 0.1) as authentic_event_score
+    from events e
+    inner join event_weights w on e.event_type = w.event_type
+    left join actors_scored a on e.actor_id = a.actor_id
+    where (e.event_type != 'PullRequestEvent' or e.payload_action = 'opened')
+      and (e.event_type != 'IssuesEvent' or e.payload_action = 'opened')
+),
+
+repo_scored as (
+    select
+        repo_id,
+        arg_max(repo_name, created_at) as repo_name,
+        sum(authentic_event_score) as authentic_score,
+
+        -- Score contributions by event type
+        sum(case when event_type = 'WatchEvent' then authentic_event_score else 0 end)             as star_score,
+        sum(case when event_type = 'ForkEvent' then authentic_event_score else 0 end)              as fork_score,
+        sum(case when event_type = 'PullRequestEvent' then authentic_event_score else 0 end)       as pr_score,
+        sum(case when event_type = 'IssuesEvent' then authentic_event_score else 0 end)            as issue_score,
+        sum(case when event_type = 'ReleaseEvent' then authentic_event_score else 0 end)           as release_score,
+        sum(case when event_type = 'PullRequestReviewEvent' then authentic_event_score else 0 end) as pr_review_score,
+
+        -- Raw counts (for side-by-side comparison with gold_trending_repos)
+        count(*) filter (where event_type = 'WatchEvent')              as raw_stars,
+        count(*) filter (where event_type = 'ForkEvent')               as raw_forks,
+        count(*) filter (where event_type = 'PullRequestEvent')        as raw_pr_opens,
+        count(*) filter (where event_type = 'IssuesEvent')             as raw_issue_opens,
+        count(*) filter (where event_type = 'ReleaseEvent')            as raw_releases,
+
+        -- Average reputation of all actors touching this repo (high = quality audience)
+        round(avg(actor_reputation)::numeric, 3) as avg_actor_reputation,
+        round(max(actor_reputation)::numeric, 3) as max_actor_reputation,
+
+        count(distinct actor_id) as unique_actors,
+
+        min(created_at) as first_event_at,
+        max(created_at) as last_event_at
+    from weighted_events
+    group by repo_id
+)
+
+select
+    repo_id,
+    repo_name,
+    round(authentic_score::numeric, 2) as authentic_score,
+    avg_actor_reputation,
+    max_actor_reputation,
+    unique_actors,
+    round(star_score::numeric, 2)      as star_score,
+    round(fork_score::numeric, 2)      as fork_score,
+    round(pr_score::numeric, 2)        as pr_score,
+    round(issue_score::numeric, 2)     as issue_score,
+    round(release_score::numeric, 2)   as release_score,
+    round(pr_review_score::numeric, 2) as pr_review_score,
+    raw_stars,
+    raw_forks,
+    raw_pr_opens,
+    raw_issue_opens,
+    raw_releases,
+    first_event_at,
+    last_event_at,
+    current_timestamp as _processed_at
+from repo_scored
+where authentic_score > 0
+order by authentic_score desc
+    );
+    
+  
+[0m03:24:33.125893 [debug] [Thread-1 (]: DuckDB adapter: Rolling back transaction.
+[0m03:24:33.126046 [debug] [Thread-1 (]: On model.github_signal.gold_authentic_trending: ROLLBACK
+[0m03:24:33.126397 [debug] [Thread-1 (]: On model.github_signal.gold_authentic_trending: Close
+[0m03:24:33.131066 [debug] [Thread-1 (]: Runtime Error in model gold_authentic_trending (models/gold/gold_authentic_trending.sql)
+  Binder Error: Referenced column "status" not found in FROM clause!
+  Candidate bindings: "reputation_score", "has_custom_avatar", "user_type", "event_type"
+  
+  LINE 29:             when coalesce(account_type, 'User') = 'Organiza...
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0m03:24:33.132053 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '14e47ebe-4b48-44a6-8fd9-870b7b149709', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c52b350>]}
+[0m03:24:33.132355 [error] [Thread-1 (]: 1 of 1 ERROR creating sql external model main.gold_authentic_trending .......... [[31mERROR[0m in 0.07s]
+[0m03:24:33.132780 [debug] [Thread-1 (]: Finished running node model.github_signal.gold_authentic_trending
+[0m03:24:33.133059 [debug] [Thread-4 (]: Marking all children of 'model.github_signal.gold_authentic_trending' to be skipped because of status 'error'.  Reason: Runtime Error in model gold_authentic_trending (models/gold/gold_authentic_trending.sql)
+  Binder Error: Referenced column "status" not found in FROM clause!
+  Candidate bindings: "reputation_score", "has_custom_avatar", "user_type", "event_type"
+  
+  LINE 29:             when coalesce(account_type, 'User') = 'Organiza...
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^.
+[0m03:24:33.133998 [debug] [MainThread]: Using duckdb connection "master"
+[0m03:24:33.134168 [debug] [MainThread]: On master: BEGIN
+[0m03:24:33.134287 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m03:24:33.134579 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m03:24:33.134736 [debug] [MainThread]: On master: COMMIT
+[0m03:24:33.134856 [debug] [MainThread]: Using duckdb connection "master"
+[0m03:24:33.134956 [debug] [MainThread]: On master: COMMIT
+[0m03:24:33.135133 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m03:24:33.135238 [debug] [MainThread]: On master: Close
+[0m03:24:33.135382 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m03:24:33.135483 [debug] [MainThread]: Connection 'model.github_signal.gold_authentic_trending' was properly closed.
+[0m03:24:33.135591 [info ] [MainThread]: 
+[0m03:24:33.135713 [info ] [MainThread]: Finished running 1 external model, 1 project hook in 0 hours 0 minutes and 0.32 seconds (0.32s).
+[0m03:24:33.136001 [debug] [MainThread]: Command end result
+[0m03:24:33.151031 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/fredoffei/Documents/github-signal-platform/dbt/target/manifest.json
+[0m03:24:33.151963 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/fredoffei/Documents/github-signal-platform/dbt/target/semantic_manifest.json
+[0m03:24:33.154457 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/fredoffei/Documents/github-signal-platform/dbt/target/run_results.json
+[0m03:24:33.154636 [info ] [MainThread]: 
+[0m03:24:33.154796 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m03:24:33.154916 [info ] [MainThread]: 
+[0m03:24:33.155058 [error] [MainThread]: [31mFailure in model gold_authentic_trending (models/gold/gold_authentic_trending.sql)[0m
+[0m03:24:33.155197 [error] [MainThread]:   Runtime Error in model gold_authentic_trending (models/gold/gold_authentic_trending.sql)
+  Binder Error: Referenced column "status" not found in FROM clause!
+  Candidate bindings: "reputation_score", "has_custom_avatar", "user_type", "event_type"
+  
+  LINE 29:             when coalesce(account_type, 'User') = 'Organiza...
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0m03:24:33.155300 [info ] [MainThread]: 
+[0m03:24:33.155421 [info ] [MainThread]:   compiled code at target/compiled/github_signal/models/gold/gold_authentic_trending.sql
+[0m03:24:33.155521 [info ] [MainThread]: 
+[0m03:24:33.155637 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=1 SKIP=0 NO-OP=0 TOTAL=2
+[0m03:24:33.157412 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.91060877, "process_in_blocks": "0", "process_kernel_time": 0.346679, "process_mem_max_rss": "195313664", "process_out_blocks": "0", "process_user_time": 1.266618}
+[0m03:24:33.157676 [debug] [MainThread]: Command `dbt run` failed at 03:24:33.157638 after 0.91 seconds
+[0m03:24:33.157844 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c5e3cd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c943570>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c943890>]}
+[0m03:24:33.157998 [debug] [MainThread]: Flushing usage events
+[0m03:24:33.704573 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m03:26:54.390862 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a555fd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b78f750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b78fb10>]}
+
+
+============================== 03:26:54.393830 | 3576d6de-e8cc-41ad-9f40-d820d466cb4c ==============================
+[0m03:26:54.393830 [info ] [MainThread]: Running with dbt=1.11.17
+[0m03:26:54.394112 [debug] [MainThread]: running dbt with arguments {'use_experimental_parser': 'False', 'invocation_command': 'dbt run --select gold_authentic_trending', 'target_path': 'None', 'empty': 'False', 'write_json': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'debug': 'False', 'log_path': '/Users/fredoffei/Documents/github-signal-platform/dbt/logs', 'send_anonymous_usage_stats': 'True', 'introspect': 'True', 'indirect_selection': 'eager', 'fail_fast': 'False', 'printer_width': '80', 'no_print': 'None', 'static_parser': 'True', 'quiet': 'False', 'version_check': 'True', 'log_format': 'default', 'cache_selected_only': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'profiles_dir': '/Users/fredoffei/Documents/github-signal-platform/dbt', 'use_colors': 'True', 'log_cache_events': 'False'}
+[0m03:26:54.537321 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '3576d6de-e8cc-41ad-9f40-d820d466cb4c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10aa155b0>]}
+[0m03:26:54.561115 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '3576d6de-e8cc-41ad-9f40-d820d466cb4c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b8febe0>]}
+[0m03:26:54.562641 [info ] [MainThread]: Registered adapter: duckdb=1.11.1
+[0m03:26:54.603776 [debug] [MainThread]: checksum: 6b6411fb925d7fe017d7428f9d9af996704b52c1bbfb75b401b39f0bcbc3f5dc, vars: {}, profile: , target: , version: 1.11.17
+[0m03:26:54.682488 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m03:26:54.682912 [debug] [MainThread]: Partial parsing: updated file: github_signal://models/gold/gold_authentic_trending.sql
+[0m03:26:54.890639 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '3576d6de-e8cc-41ad-9f40-d820d466cb4c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10beb7b50>]}
+[0m03:26:54.939134 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/fredoffei/Documents/github-signal-platform/dbt/target/manifest.json
+[0m03:26:54.940334 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/fredoffei/Documents/github-signal-platform/dbt/target/semantic_manifest.json
+[0m03:26:54.947140 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '3576d6de-e8cc-41ad-9f40-d820d466cb4c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10be93b60>]}
+[0m03:26:54.947381 [info ] [MainThread]: Found 6 models, 23 data tests, 1 operation, 2 sources, 513 macros
+[0m03:26:54.947525 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '3576d6de-e8cc-41ad-9f40-d820d466cb4c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c22f3f0>]}
+[0m03:26:54.948276 [info ] [MainThread]: 
+[0m03:26:54.948419 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m03:26:54.948526 [info ] [MainThread]: 
+[0m03:26:54.948720 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m03:26:54.949055 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_warehouse'
+[0m03:26:54.978223 [debug] [ThreadPool]: Using duckdb connection "list_warehouse"
+[0m03:26:54.978445 [debug] [ThreadPool]: On list_warehouse: /* {"app": "dbt", "dbt_version": "1.11.17", "profile_name": "github_signal", "target_name": "dev", "connection_name": "list_warehouse"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"warehouse"'
+    
+  
+  
+[0m03:26:54.978573 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m03:26:55.175265 [debug] [ThreadPool]: SQL status: OK in 0.197 seconds
+[0m03:26:55.176313 [debug] [ThreadPool]: On list_warehouse: Close
+[0m03:26:55.176642 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_warehouse, now create_warehouse_main)
+[0m03:26:55.176826 [debug] [ThreadPool]: Creating schema "database: "warehouse"
+schema: "main"
+"
+[0m03:26:55.180060 [debug] [ThreadPool]: Using duckdb connection "create_warehouse_main"
+[0m03:26:55.180204 [debug] [ThreadPool]: On create_warehouse_main: /* {"app": "dbt", "dbt_version": "1.11.17", "profile_name": "github_signal", "target_name": "dev", "connection_name": "create_warehouse_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='warehouse'
+        and type != 'duckdb'
+    
+  
+[0m03:26:55.180312 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m03:26:55.181825 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m03:26:55.182405 [debug] [ThreadPool]: Using duckdb connection "create_warehouse_main"
+[0m03:26:55.182532 [debug] [ThreadPool]: On create_warehouse_main: BEGIN
+[0m03:26:55.182800 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m03:26:55.182969 [debug] [ThreadPool]: Using duckdb connection "create_warehouse_main"
+[0m03:26:55.183088 [debug] [ThreadPool]: On create_warehouse_main: /* {"app": "dbt", "dbt_version": "1.11.17", "profile_name": "github_signal", "target_name": "dev", "connection_name": "create_warehouse_main"} */
+
+    
+    
+        create schema if not exists "warehouse"."main"
+    
+[0m03:26:55.183692 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m03:26:55.184064 [debug] [ThreadPool]: On create_warehouse_main: COMMIT
+[0m03:26:55.184187 [debug] [ThreadPool]: Using duckdb connection "create_warehouse_main"
+[0m03:26:55.184291 [debug] [ThreadPool]: On create_warehouse_main: COMMIT
+[0m03:26:55.184558 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m03:26:55.184741 [debug] [ThreadPool]: On create_warehouse_main: Close
+[0m03:26:55.187042 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_warehouse_main, now list_warehouse_main)
+[0m03:26:55.189632 [debug] [ThreadPool]: Using duckdb connection "list_warehouse_main"
+[0m03:26:55.189798 [debug] [ThreadPool]: On list_warehouse_main: BEGIN
+[0m03:26:55.189908 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m03:26:55.190168 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m03:26:55.190267 [debug] [ThreadPool]: Using duckdb connection "list_warehouse_main"
+[0m03:26:55.190371 [debug] [ThreadPool]: On list_warehouse_main: /* {"app": "dbt", "dbt_version": "1.11.17", "profile_name": "github_signal", "target_name": "dev", "connection_name": "list_warehouse_main"} */
+select
+      'warehouse' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'warehouse'
+  
+[0m03:26:55.202640 [debug] [ThreadPool]: SQL status: OK in 0.012 seconds
+[0m03:26:55.203324 [debug] [ThreadPool]: On list_warehouse_main: ROLLBACK
+[0m03:26:55.204129 [debug] [ThreadPool]: On list_warehouse_main: Close
+[0m03:26:55.204568 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '3576d6de-e8cc-41ad-9f40-d820d466cb4c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c28fd40>]}
+[0m03:26:55.204771 [debug] [MainThread]: Using duckdb connection "master"
+[0m03:26:55.204881 [debug] [MainThread]: On master: BEGIN
+[0m03:26:55.204983 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m03:26:55.205190 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m03:26:55.205306 [debug] [MainThread]: On master: COMMIT
+[0m03:26:55.205408 [debug] [MainThread]: Using duckdb connection "master"
+[0m03:26:55.205501 [debug] [MainThread]: On master: COMMIT
+[0m03:26:55.205659 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m03:26:55.208646 [debug] [MainThread]: Writing injected SQL for node "operation.github_signal.github_signal-on-run-start-0"
+[0m03:26:55.210838 [info ] [MainThread]: 1 of 1 START hook: github_signal.on-run-start.0 ................................ [RUN]
+[0m03:26:55.211082 [debug] [MainThread]: Using duckdb connection "master"
+[0m03:26:55.211221 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.11.17", "profile_name": "github_signal", "target_name": "dev", "connection_name": "master"} */
+
+  INSTALL httpfs;
+  LOAD httpfs;
+  CREATE OR REPLACE SECRET minio_s3 (
+    TYPE S3,
+    KEY_ID 'ghsignal',
+    SECRET 'ghsignal_dev_password',
+    REGION 'us-east-1',
+    ENDPOINT 'localhost:9000',
+    URL_STYLE 'path',
+    USE_SSL false
+  );
+
+[0m03:26:55.212661 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m03:26:55.213081 [info ] [MainThread]: 1 of 1 OK hook: github_signal.on-run-start.0 ................................... [[32mOK[0m in 0.01s]
+[0m03:26:55.213232 [info ] [MainThread]: 
+[0m03:26:55.213364 [debug] [MainThread]: On master: Close
+[0m03:26:55.214543 [debug] [Thread-1 (]: Began running node model.github_signal.gold_authentic_trending
+[0m03:26:55.214747 [info ] [Thread-1 (]: 1 of 1 START sql external model main.gold_authentic_trending ................... [RUN]
+[0m03:26:55.214909 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_warehouse_main, now model.github_signal.gold_authentic_trending)
+[0m03:26:55.215069 [debug] [Thread-1 (]: Began compiling node model.github_signal.gold_authentic_trending
+[0m03:26:55.216832 [debug] [Thread-1 (]: Writing injected SQL for node "model.github_signal.gold_authentic_trending"
+[0m03:26:55.217354 [debug] [Thread-1 (]: Began executing node model.github_signal.gold_authentic_trending
+[0m03:26:55.218122 [debug] [Thread-1 (]: Using duckdb connection "model.github_signal.gold_authentic_trending"
+[0m03:26:55.218268 [debug] [Thread-1 (]: On model.github_signal.gold_authentic_trending: /* {"app": "dbt", "dbt_version": "1.11.17", "profile_name": "github_signal", "target_name": "dev", "node_id": "model.github_signal.gold_authentic_trending"} */
+select database_name, type from duckdb_databases()
+[0m03:26:55.218392 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m03:26:55.218950 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m03:26:55.219594 [debug] [Thread-1 (]: Using duckdb connection "model.github_signal.gold_authentic_trending"
+[0m03:26:55.219765 [debug] [Thread-1 (]: On model.github_signal.gold_authentic_trending: /* {"app": "dbt", "dbt_version": "1.11.17", "profile_name": "github_signal", "target_name": "dev", "node_id": "model.github_signal.gold_authentic_trending"} */
+
+                    select table_name, constraint_type from duckdb_constraints()
+                    where lower(database_name) = lower('warehouse')
+                      and lower(schema_name) = lower('main')
+                      and constraint_type in ('PRIMARY KEY', 'UNIQUE', 'FOREIGN KEY')
+                    
+[0m03:26:55.223664 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m03:26:55.247882 [debug] [Thread-1 (]: Using duckdb connection "model.github_signal.gold_authentic_trending"
+[0m03:26:55.248149 [debug] [Thread-1 (]: On model.github_signal.gold_authentic_trending: BEGIN
+[0m03:26:55.248449 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m03:26:55.248578 [debug] [Thread-1 (]: Using duckdb connection "model.github_signal.gold_authentic_trending"
+[0m03:26:55.248771 [debug] [Thread-1 (]: On model.github_signal.gold_authentic_trending: /* {"app": "dbt", "dbt_version": "1.11.17", "profile_name": "github_signal", "target_name": "dev", "node_id": "model.github_signal.gold_authentic_trending"} */
+
+    
+
+    create  table
+      "warehouse"."main"."gold_authentic_trending__dbt_tmp"
+  
+    
+    as (
+      -- depends_on: "warehouse"."main"."silver_events"
+
+
+
+with events as (
+    select *
+    from read_parquet('s3://github-signal-raw/silver/events/*.parquet')
+    where actor_is_bot = false
+      and repo_id is not null
+),
+
+actors as (
+    select
+        actor_id,
+        coalesce(reputation_score, 0.1) as reputation_score
+    from read_parquet('s3://github-signal-raw/silver/actors_enriched/data.parquet')
+),
+
+actors_scored as (
+    select
+        actor_id,
+        -- Reputation score (computed here so we don't depend on what's in actors_enriched)
+        -- Range roughly 0 to 5+
+        case
+            when coalesce(status, 'missing') != 'enriched' then 0.1       -- unenriched baseline
+            when coalesce(account_type, 'User') = 'Organization' then 2.5  -- orgs are real entities
+            else
+                0.3 * ln(coalesce(followers, 0) + 1)
+                + 0.2 * ln(coalesce(public_repos, 0) + 1)
+                + 0.1 * (
+                    cast(coalesce(has_bio, false) as int)
+                    + cast(coalesce(has_company, false) as int)
+                    + cast(coalesce(has_location, false) as int)
+                    + cast(coalesce(has_custom_avatar, false) as int)
+                )
+                + 0.4 * least(
+                    date_diff('year', coalesce(github_created_at, current_timestamp)::timestamp, current_timestamp),
+                    3.0
+                )
+        end as reputation_score
+    from actors
+),
+
+event_weights(event_type, weight) as (
+    values
+        ('WatchEvent', 3.0),
+        ('ForkEvent', 5.0),
+        ('PullRequestEvent', 10.0),
+        ('IssuesEvent', 2.0),
+        ('ReleaseEvent', 15.0),
+        ('PullRequestReviewEvent', 4.0)
+),
+
+weighted_events as (
+    select
+        e.repo_id,
+        e.repo_name,
+        e.event_type,
+        e.actor_id,
+        e.created_at,
+        w.weight as event_weight,
+        coalesce(a.reputation_score, 0.1) as actor_reputation,
+        w.weight * coalesce(a.reputation_score, 0.1) as authentic_event_score
+    from events e
+    inner join event_weights w on e.event_type = w.event_type
+    left join actors_scored a on e.actor_id = a.actor_id
+    where (e.event_type != 'PullRequestEvent' or e.payload_action = 'opened')
+      and (e.event_type != 'IssuesEvent' or e.payload_action = 'opened')
+),
+
+repo_scored as (
+    select
+        repo_id,
+        arg_max(repo_name, created_at) as repo_name,
+        sum(authentic_event_score) as authentic_score,
+
+        -- Score contributions by event type
+        sum(case when event_type = 'WatchEvent' then authentic_event_score else 0 end)             as star_score,
+        sum(case when event_type = 'ForkEvent' then authentic_event_score else 0 end)              as fork_score,
+        sum(case when event_type = 'PullRequestEvent' then authentic_event_score else 0 end)       as pr_score,
+        sum(case when event_type = 'IssuesEvent' then authentic_event_score else 0 end)            as issue_score,
+        sum(case when event_type = 'ReleaseEvent' then authentic_event_score else 0 end)           as release_score,
+        sum(case when event_type = 'PullRequestReviewEvent' then authentic_event_score else 0 end) as pr_review_score,
+
+        -- Raw counts (for side-by-side comparison with gold_trending_repos)
+        count(*) filter (where event_type = 'WatchEvent')              as raw_stars,
+        count(*) filter (where event_type = 'ForkEvent')               as raw_forks,
+        count(*) filter (where event_type = 'PullRequestEvent')        as raw_pr_opens,
+        count(*) filter (where event_type = 'IssuesEvent')             as raw_issue_opens,
+        count(*) filter (where event_type = 'ReleaseEvent')            as raw_releases,
+
+        -- Average reputation of all actors touching this repo (high = quality audience)
+        round(avg(actor_reputation)::numeric, 3) as avg_actor_reputation,
+        round(max(actor_reputation)::numeric, 3) as max_actor_reputation,
+
+        count(distinct actor_id) as unique_actors,
+
+        min(created_at) as first_event_at,
+        max(created_at) as last_event_at
+    from weighted_events
+    group by repo_id
+)
+
+select
+    repo_id,
+    repo_name,
+    round(authentic_score::numeric, 2) as authentic_score,
+    avg_actor_reputation,
+    max_actor_reputation,
+    unique_actors,
+    round(star_score::numeric, 2)      as star_score,
+    round(fork_score::numeric, 2)      as fork_score,
+    round(pr_score::numeric, 2)        as pr_score,
+    round(issue_score::numeric, 2)     as issue_score,
+    round(release_score::numeric, 2)   as release_score,
+    round(pr_review_score::numeric, 2) as pr_review_score,
+    raw_stars,
+    raw_forks,
+    raw_pr_opens,
+    raw_issue_opens,
+    raw_releases,
+    first_event_at,
+    last_event_at,
+    current_timestamp as _processed_at
+from repo_scored
+where authentic_score > 0
+order by authentic_score desc
+    );
+    
+  
+[0m03:26:55.275950 [debug] [Thread-1 (]: DuckDB adapter: duckdb error: Binder Error: Referenced column "status" not found in FROM clause!
+Candidate bindings: "reputation_score"
+
+LINE 31:             when coalesce(account_type, 'User') = 'Organiza...
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0m03:26:55.276321 [debug] [Thread-1 (]: DuckDB adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.11.17", "profile_name": "github_signal", "target_name": "dev", "node_id": "model.github_signal.gold_authentic_trending"} */
+
+    
+
+    create  table
+      "warehouse"."main"."gold_authentic_trending__dbt_tmp"
+  
+    
+    as (
+      -- depends_on: "warehouse"."main"."silver_events"
+
+
+
+with events as (
+    select *
+    from read_parquet('s3://github-signal-raw/silver/events/*.parquet')
+    where actor_is_bot = false
+      and repo_id is not null
+),
+
+actors as (
+    select
+        actor_id,
+        coalesce(reputation_score, 0.1) as reputation_score
+    from read_parquet('s3://github-signal-raw/silver/actors_enriched/data.parquet')
+),
+
+actors_scored as (
+    select
+        actor_id,
+        -- Reputation score (computed here so we don't depend on what's in actors_enriched)
+        -- Range roughly 0 to 5+
+        case
+            when coalesce(status, 'missing') != 'enriched' then 0.1       -- unenriched baseline
+            when coalesce(account_type, 'User') = 'Organization' then 2.5  -- orgs are real entities
+            else
+                0.3 * ln(coalesce(followers, 0) + 1)
+                + 0.2 * ln(coalesce(public_repos, 0) + 1)
+                + 0.1 * (
+                    cast(coalesce(has_bio, false) as int)
+                    + cast(coalesce(has_company, false) as int)
+                    + cast(coalesce(has_location, false) as int)
+                    + cast(coalesce(has_custom_avatar, false) as int)
+                )
+                + 0.4 * least(
+                    date_diff('year', coalesce(github_created_at, current_timestamp)::timestamp, current_timestamp),
+                    3.0
+                )
+        end as reputation_score
+    from actors
+),
+
+event_weights(event_type, weight) as (
+    values
+        ('WatchEvent', 3.0),
+        ('ForkEvent', 5.0),
+        ('PullRequestEvent', 10.0),
+        ('IssuesEvent', 2.0),
+        ('ReleaseEvent', 15.0),
+        ('PullRequestReviewEvent', 4.0)
+),
+
+weighted_events as (
+    select
+        e.repo_id,
+        e.repo_name,
+        e.event_type,
+        e.actor_id,
+        e.created_at,
+        w.weight as event_weight,
+        coalesce(a.reputation_score, 0.1) as actor_reputation,
+        w.weight * coalesce(a.reputation_score, 0.1) as authentic_event_score
+    from events e
+    inner join event_weights w on e.event_type = w.event_type
+    left join actors_scored a on e.actor_id = a.actor_id
+    where (e.event_type != 'PullRequestEvent' or e.payload_action = 'opened')
+      and (e.event_type != 'IssuesEvent' or e.payload_action = 'opened')
+),
+
+repo_scored as (
+    select
+        repo_id,
+        arg_max(repo_name, created_at) as repo_name,
+        sum(authentic_event_score) as authentic_score,
+
+        -- Score contributions by event type
+        sum(case when event_type = 'WatchEvent' then authentic_event_score else 0 end)             as star_score,
+        sum(case when event_type = 'ForkEvent' then authentic_event_score else 0 end)              as fork_score,
+        sum(case when event_type = 'PullRequestEvent' then authentic_event_score else 0 end)       as pr_score,
+        sum(case when event_type = 'IssuesEvent' then authentic_event_score else 0 end)            as issue_score,
+        sum(case when event_type = 'ReleaseEvent' then authentic_event_score else 0 end)           as release_score,
+        sum(case when event_type = 'PullRequestReviewEvent' then authentic_event_score else 0 end) as pr_review_score,
+
+        -- Raw counts (for side-by-side comparison with gold_trending_repos)
+        count(*) filter (where event_type = 'WatchEvent')              as raw_stars,
+        count(*) filter (where event_type = 'ForkEvent')               as raw_forks,
+        count(*) filter (where event_type = 'PullRequestEvent')        as raw_pr_opens,
+        count(*) filter (where event_type = 'IssuesEvent')             as raw_issue_opens,
+        count(*) filter (where event_type = 'ReleaseEvent')            as raw_releases,
+
+        -- Average reputation of all actors touching this repo (high = quality audience)
+        round(avg(actor_reputation)::numeric, 3) as avg_actor_reputation,
+        round(max(actor_reputation)::numeric, 3) as max_actor_reputation,
+
+        count(distinct actor_id) as unique_actors,
+
+        min(created_at) as first_event_at,
+        max(created_at) as last_event_at
+    from weighted_events
+    group by repo_id
+)
+
+select
+    repo_id,
+    repo_name,
+    round(authentic_score::numeric, 2) as authentic_score,
+    avg_actor_reputation,
+    max_actor_reputation,
+    unique_actors,
+    round(star_score::numeric, 2)      as star_score,
+    round(fork_score::numeric, 2)      as fork_score,
+    round(pr_score::numeric, 2)        as pr_score,
+    round(issue_score::numeric, 2)     as issue_score,
+    round(release_score::numeric, 2)   as release_score,
+    round(pr_review_score::numeric, 2) as pr_review_score,
+    raw_stars,
+    raw_forks,
+    raw_pr_opens,
+    raw_issue_opens,
+    raw_releases,
+    first_event_at,
+    last_event_at,
+    current_timestamp as _processed_at
+from repo_scored
+where authentic_score > 0
+order by authentic_score desc
+    );
+    
+  
+[0m03:26:55.276542 [debug] [Thread-1 (]: DuckDB adapter: Rolling back transaction.
+[0m03:26:55.276678 [debug] [Thread-1 (]: On model.github_signal.gold_authentic_trending: ROLLBACK
+[0m03:26:55.276999 [debug] [Thread-1 (]: On model.github_signal.gold_authentic_trending: Close
+[0m03:26:55.281539 [debug] [Thread-1 (]: Runtime Error in model gold_authentic_trending (models/gold/gold_authentic_trending.sql)
+  Binder Error: Referenced column "status" not found in FROM clause!
+  Candidate bindings: "reputation_score"
+  
+  LINE 31:             when coalesce(account_type, 'User') = 'Organiza...
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0m03:26:55.282611 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '3576d6de-e8cc-41ad-9f40-d820d466cb4c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c263590>]}
+[0m03:26:55.282980 [error] [Thread-1 (]: 1 of 1 ERROR creating sql external model main.gold_authentic_trending .......... [[31mERROR[0m in 0.07s]
+[0m03:26:55.283250 [debug] [Thread-1 (]: Finished running node model.github_signal.gold_authentic_trending
+[0m03:26:55.283489 [debug] [Thread-4 (]: Marking all children of 'model.github_signal.gold_authentic_trending' to be skipped because of status 'error'.  Reason: Runtime Error in model gold_authentic_trending (models/gold/gold_authentic_trending.sql)
+  Binder Error: Referenced column "status" not found in FROM clause!
+  Candidate bindings: "reputation_score"
+  
+  LINE 31:             when coalesce(account_type, 'User') = 'Organiza...
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^.
+[0m03:26:55.284301 [debug] [MainThread]: Using duckdb connection "master"
+[0m03:26:55.284431 [debug] [MainThread]: On master: BEGIN
+[0m03:26:55.284535 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m03:26:55.284792 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m03:26:55.284924 [debug] [MainThread]: On master: COMMIT
+[0m03:26:55.285032 [debug] [MainThread]: Using duckdb connection "master"
+[0m03:26:55.285140 [debug] [MainThread]: On master: COMMIT
+[0m03:26:55.285316 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m03:26:55.285436 [debug] [MainThread]: On master: Close
+[0m03:26:55.285579 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m03:26:55.285678 [debug] [MainThread]: Connection 'model.github_signal.gold_authentic_trending' was properly closed.
+[0m03:26:55.285787 [info ] [MainThread]: 
+[0m03:26:55.285902 [info ] [MainThread]: Finished running 1 external model, 1 project hook in 0 hours 0 minutes and 0.34 seconds (0.34s).
+[0m03:26:55.286181 [debug] [MainThread]: Command end result
+[0m03:26:55.300960 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/fredoffei/Documents/github-signal-platform/dbt/target/manifest.json
+[0m03:26:55.301977 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/fredoffei/Documents/github-signal-platform/dbt/target/semantic_manifest.json
+[0m03:26:55.304380 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/fredoffei/Documents/github-signal-platform/dbt/target/run_results.json
+[0m03:26:55.304508 [info ] [MainThread]: 
+[0m03:26:55.304656 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m03:26:55.304768 [info ] [MainThread]: 
+[0m03:26:55.304915 [error] [MainThread]: [31mFailure in model gold_authentic_trending (models/gold/gold_authentic_trending.sql)[0m
+[0m03:26:55.305046 [error] [MainThread]:   Runtime Error in model gold_authentic_trending (models/gold/gold_authentic_trending.sql)
+  Binder Error: Referenced column "status" not found in FROM clause!
+  Candidate bindings: "reputation_score"
+  
+  LINE 31:             when coalesce(account_type, 'User') = 'Organiza...
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0m03:26:55.305165 [info ] [MainThread]: 
+[0m03:26:55.305282 [info ] [MainThread]:   compiled code at target/compiled/github_signal/models/gold/gold_authentic_trending.sql
+[0m03:26:55.305381 [info ] [MainThread]: 
+[0m03:26:55.305490 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=1 SKIP=0 NO-OP=0 TOTAL=2
+[0m03:26:55.307550 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.9543316, "process_in_blocks": "0", "process_kernel_time": 0.36555, "process_mem_max_rss": "195018752", "process_out_blocks": "0", "process_user_time": 1.326385}
+[0m03:26:55.307751 [debug] [MainThread]: Command `dbt run` failed at 03:26:55.307718 after 0.95 seconds
+[0m03:26:55.307915 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c317cd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c67f430>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c67f750>]}
+[0m03:26:55.308063 [debug] [MainThread]: Flushing usage events
+[0m03:26:55.883015 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m03:28:00.980616 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10adcdfd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c007750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c007b10>]}
+
+
+============================== 03:28:00.983483 | 709d498f-61bd-416b-a2af-2223ceb12232 ==============================
+[0m03:28:00.983483 [info ] [MainThread]: Running with dbt=1.11.17
+[0m03:28:00.983747 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'cache_selected_only': 'False', 'use_colors': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'warn_error': 'None', 'log_path': '/Users/fredoffei/Documents/github-signal-platform/dbt/logs', 'send_anonymous_usage_stats': 'True', 'use_experimental_parser': 'False', 'printer_width': '80', 'write_json': 'True', 'debug': 'False', 'introspect': 'True', 'quiet': 'False', 'indirect_selection': 'eager', 'partial_parse': 'True', 'invocation_command': 'dbt run --select gold_authentic_trending', 'fail_fast': 'False', 'empty': 'False', 'log_cache_events': 'False', 'no_print': 'None', 'static_parser': 'True', 'log_format': 'default', 'profiles_dir': '/Users/fredoffei/Documents/github-signal-platform/dbt'}
+[0m03:28:01.122339 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '709d498f-61bd-416b-a2af-2223ceb12232', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b2915b0>]}
+[0m03:28:01.144977 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '709d498f-61bd-416b-a2af-2223ceb12232', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c176be0>]}
+[0m03:28:01.146636 [info ] [MainThread]: Registered adapter: duckdb=1.11.1
+[0m03:28:01.188908 [debug] [MainThread]: checksum: 6b6411fb925d7fe017d7428f9d9af996704b52c1bbfb75b401b39f0bcbc3f5dc, vars: {}, profile: , target: , version: 1.11.17
+[0m03:28:01.267754 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m03:28:01.268166 [debug] [MainThread]: Partial parsing: updated file: github_signal://models/gold/gold_authentic_trending.sql
+[0m03:28:01.476307 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '709d498f-61bd-416b-a2af-2223ceb12232', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c72fb50>]}
+[0m03:28:01.525944 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/fredoffei/Documents/github-signal-platform/dbt/target/manifest.json
+[0m03:28:01.527401 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/fredoffei/Documents/github-signal-platform/dbt/target/semantic_manifest.json
+[0m03:28:01.534917 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '709d498f-61bd-416b-a2af-2223ceb12232', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c70bd40>]}
+[0m03:28:01.535172 [info ] [MainThread]: Found 6 models, 23 data tests, 1 operation, 2 sources, 513 macros
+[0m03:28:01.535316 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '709d498f-61bd-416b-a2af-2223ceb12232', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ca9e270>]}
+[0m03:28:01.536069 [info ] [MainThread]: 
+[0m03:28:01.536209 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m03:28:01.536315 [info ] [MainThread]: 
+[0m03:28:01.536521 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m03:28:01.536888 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_warehouse'
+[0m03:28:01.565449 [debug] [ThreadPool]: Using duckdb connection "list_warehouse"
+[0m03:28:01.565658 [debug] [ThreadPool]: On list_warehouse: /* {"app": "dbt", "dbt_version": "1.11.17", "profile_name": "github_signal", "target_name": "dev", "connection_name": "list_warehouse"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"warehouse"'
+    
+  
+  
+[0m03:28:01.565778 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m03:28:01.745797 [debug] [ThreadPool]: SQL status: OK in 0.180 seconds
+[0m03:28:01.746565 [debug] [ThreadPool]: On list_warehouse: Close
+[0m03:28:01.746911 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_warehouse, now create_warehouse_main)
+[0m03:28:01.747106 [debug] [ThreadPool]: Creating schema "database: "warehouse"
+schema: "main"
+"
+[0m03:28:01.750406 [debug] [ThreadPool]: Using duckdb connection "create_warehouse_main"
+[0m03:28:01.750572 [debug] [ThreadPool]: On create_warehouse_main: /* {"app": "dbt", "dbt_version": "1.11.17", "profile_name": "github_signal", "target_name": "dev", "connection_name": "create_warehouse_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='warehouse'
+        and type != 'duckdb'
+    
+  
+[0m03:28:01.750680 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m03:28:01.752173 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m03:28:01.752789 [debug] [ThreadPool]: Using duckdb connection "create_warehouse_main"
+[0m03:28:01.752922 [debug] [ThreadPool]: On create_warehouse_main: BEGIN
+[0m03:28:01.753169 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m03:28:01.753284 [debug] [ThreadPool]: Using duckdb connection "create_warehouse_main"
+[0m03:28:01.753394 [debug] [ThreadPool]: On create_warehouse_main: /* {"app": "dbt", "dbt_version": "1.11.17", "profile_name": "github_signal", "target_name": "dev", "connection_name": "create_warehouse_main"} */
+
+    
+    
+        create schema if not exists "warehouse"."main"
+    
+[0m03:28:01.753885 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m03:28:01.754319 [debug] [ThreadPool]: On create_warehouse_main: COMMIT
+[0m03:28:01.754460 [debug] [ThreadPool]: Using duckdb connection "create_warehouse_main"
+[0m03:28:01.754576 [debug] [ThreadPool]: On create_warehouse_main: COMMIT
+[0m03:28:01.754783 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m03:28:01.754897 [debug] [ThreadPool]: On create_warehouse_main: Close
+[0m03:28:01.757128 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_warehouse_main, now list_warehouse_main)
+[0m03:28:01.759847 [debug] [ThreadPool]: Using duckdb connection "list_warehouse_main"
+[0m03:28:01.760014 [debug] [ThreadPool]: On list_warehouse_main: BEGIN
+[0m03:28:01.760123 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m03:28:01.760404 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m03:28:01.760570 [debug] [ThreadPool]: Using duckdb connection "list_warehouse_main"
+[0m03:28:01.760695 [debug] [ThreadPool]: On list_warehouse_main: /* {"app": "dbt", "dbt_version": "1.11.17", "profile_name": "github_signal", "target_name": "dev", "connection_name": "list_warehouse_main"} */
+select
+      'warehouse' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'warehouse'
+  
+[0m03:28:01.772019 [debug] [ThreadPool]: SQL status: OK in 0.011 seconds
+[0m03:28:01.772920 [debug] [ThreadPool]: On list_warehouse_main: ROLLBACK
+[0m03:28:01.773821 [debug] [ThreadPool]: On list_warehouse_main: Close
+[0m03:28:01.774319 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '709d498f-61bd-416b-a2af-2223ceb12232', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10cb07d40>]}
+[0m03:28:01.774546 [debug] [MainThread]: Using duckdb connection "master"
+[0m03:28:01.774667 [debug] [MainThread]: On master: BEGIN
+[0m03:28:01.774773 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m03:28:01.774978 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m03:28:01.775084 [debug] [MainThread]: On master: COMMIT
+[0m03:28:01.775181 [debug] [MainThread]: Using duckdb connection "master"
+[0m03:28:01.775273 [debug] [MainThread]: On master: COMMIT
+[0m03:28:01.775434 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m03:28:01.778415 [debug] [MainThread]: Writing injected SQL for node "operation.github_signal.github_signal-on-run-start-0"
+[0m03:28:01.780440 [info ] [MainThread]: 1 of 1 START hook: github_signal.on-run-start.0 ................................ [RUN]
+[0m03:28:01.780634 [debug] [MainThread]: Using duckdb connection "master"
+[0m03:28:01.780762 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.11.17", "profile_name": "github_signal", "target_name": "dev", "connection_name": "master"} */
+
+  INSTALL httpfs;
+  LOAD httpfs;
+  CREATE OR REPLACE SECRET minio_s3 (
+    TYPE S3,
+    KEY_ID 'ghsignal',
+    SECRET 'ghsignal_dev_password',
+    REGION 'us-east-1',
+    ENDPOINT 'localhost:9000',
+    URL_STYLE 'path',
+    USE_SSL false
+  );
+
+[0m03:28:01.781669 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m03:28:01.782040 [info ] [MainThread]: 1 of 1 OK hook: github_signal.on-run-start.0 ................................... [[32mOK[0m in 0.01s]
+[0m03:28:01.782156 [info ] [MainThread]: 
+[0m03:28:01.782266 [debug] [MainThread]: On master: Close
+[0m03:28:01.783388 [debug] [Thread-1 (]: Began running node model.github_signal.gold_authentic_trending
+[0m03:28:01.783592 [info ] [Thread-1 (]: 1 of 1 START sql external model main.gold_authentic_trending ................... [RUN]
+[0m03:28:01.783752 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_warehouse_main, now model.github_signal.gold_authentic_trending)
+[0m03:28:01.783874 [debug] [Thread-1 (]: Began compiling node model.github_signal.gold_authentic_trending
+[0m03:28:01.785554 [debug] [Thread-1 (]: Writing injected SQL for node "model.github_signal.gold_authentic_trending"
+[0m03:28:01.786014 [debug] [Thread-1 (]: Began executing node model.github_signal.gold_authentic_trending
+[0m03:28:01.786946 [debug] [Thread-1 (]: Using duckdb connection "model.github_signal.gold_authentic_trending"
+[0m03:28:01.787093 [debug] [Thread-1 (]: On model.github_signal.gold_authentic_trending: /* {"app": "dbt", "dbt_version": "1.11.17", "profile_name": "github_signal", "target_name": "dev", "node_id": "model.github_signal.gold_authentic_trending"} */
+select database_name, type from duckdb_databases()
+[0m03:28:01.787211 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m03:28:01.787661 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m03:28:01.788150 [debug] [Thread-1 (]: Using duckdb connection "model.github_signal.gold_authentic_trending"
+[0m03:28:01.788282 [debug] [Thread-1 (]: On model.github_signal.gold_authentic_trending: /* {"app": "dbt", "dbt_version": "1.11.17", "profile_name": "github_signal", "target_name": "dev", "node_id": "model.github_signal.gold_authentic_trending"} */
+
+                    select table_name, constraint_type from duckdb_constraints()
+                    where lower(database_name) = lower('warehouse')
+                      and lower(schema_name) = lower('main')
+                      and constraint_type in ('PRIMARY KEY', 'UNIQUE', 'FOREIGN KEY')
+                    
+[0m03:28:01.792051 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m03:28:01.815622 [debug] [Thread-1 (]: Using duckdb connection "model.github_signal.gold_authentic_trending"
+[0m03:28:01.815844 [debug] [Thread-1 (]: On model.github_signal.gold_authentic_trending: BEGIN
+[0m03:28:01.816112 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m03:28:01.816233 [debug] [Thread-1 (]: Using duckdb connection "model.github_signal.gold_authentic_trending"
+[0m03:28:01.816419 [debug] [Thread-1 (]: On model.github_signal.gold_authentic_trending: /* {"app": "dbt", "dbt_version": "1.11.17", "profile_name": "github_signal", "target_name": "dev", "node_id": "model.github_signal.gold_authentic_trending"} */
+
+    
+
+    create  table
+      "warehouse"."main"."gold_authentic_trending__dbt_tmp"
+  
+    
+    as (
+      -- depends_on: "warehouse"."main"."silver_events"
+
+
+
+with events as (
+    select *
+    from read_parquet('s3://github-signal-raw/silver/events/*.parquet')
+    where actor_is_bot = false
+      and repo_id is not null
+),
+
+actors as (
+    select
+        actor_id,
+        coalesce(reputation_score, 0.1) as reputation_score
+    from read_parquet('s3://github-signal-raw/silver/actors_enriched/data.parquet')
+),
+
+actors_scored as (
+    select
+        actor_id,
+        -- Reputation score (computed here so we don't depend on what's in actors_enriched)
+        -- Range roughly 0 to 5+
+        case
+            when coalesce(status, 'missing') != 'enriched' then 0.1       -- unenriched baseline
+            when coalesce(account_type, 'User') = 'Organization' then 2.5  -- orgs are real entities
+            else
+                0.3 * ln(coalesce(followers, 0) + 1)
+                + 0.2 * ln(coalesce(public_repos, 0) + 1)
+                + 0.1 * (
+                    cast(coalesce(has_bio, false) as int)
+                    + cast(coalesce(has_company, false) as int)
+                    + cast(coalesce(has_location, false) as int)
+                    + cast(coalesce(has_custom_avatar, false) as int)
+                )
+                + 0.4 * least(
+                    date_diff('year', coalesce(github_created_at, current_timestamp)::timestamp, current_timestamp),
+                    3.0
+                )
+        end as reputation_score
+    from actors
+),
+
+event_weights(event_type, weight) as (
+    values
+        ('WatchEvent', 3.0),
+        ('ForkEvent', 5.0),
+        ('PullRequestEvent', 10.0),
+        ('IssuesEvent', 2.0),
+        ('ReleaseEvent', 15.0),
+        ('PullRequestReviewEvent', 4.0)
+),
+
+weighted_events as (
+    select
+        e.repo_id,
+        e.repo_name,
+        e.event_type,
+        e.actor_id,
+        e.created_at,
+        w.weight as event_weight,
+        coalesce(a.reputation_score, 0.1) as actor_reputation,
+        w.weight * coalesce(a.reputation_score, 0.1) as authentic_event_score
+    from events e
+    inner join event_weights w on e.event_type = w.event_type
+    left join actors a on e.actor_id = a.actor_id  
+    where (e.event_type != 'PullRequestEvent' or e.payload_action = 'opened')
+      and (e.event_type != 'IssuesEvent' or e.payload_action = 'opened')
+),
+
+repo_scored as (
+    select
+        repo_id,
+        arg_max(repo_name, created_at) as repo_name,
+        sum(authentic_event_score) as authentic_score,
+
+        -- Score contributions by event type
+        sum(case when event_type = 'WatchEvent' then authentic_event_score else 0 end)             as star_score,
+        sum(case when event_type = 'ForkEvent' then authentic_event_score else 0 end)              as fork_score,
+        sum(case when event_type = 'PullRequestEvent' then authentic_event_score else 0 end)       as pr_score,
+        sum(case when event_type = 'IssuesEvent' then authentic_event_score else 0 end)            as issue_score,
+        sum(case when event_type = 'ReleaseEvent' then authentic_event_score else 0 end)           as release_score,
+        sum(case when event_type = 'PullRequestReviewEvent' then authentic_event_score else 0 end) as pr_review_score,
+
+        -- Raw counts (for side-by-side comparison with gold_trending_repos)
+        count(*) filter (where event_type = 'WatchEvent')              as raw_stars,
+        count(*) filter (where event_type = 'ForkEvent')               as raw_forks,
+        count(*) filter (where event_type = 'PullRequestEvent')        as raw_pr_opens,
+        count(*) filter (where event_type = 'IssuesEvent')             as raw_issue_opens,
+        count(*) filter (where event_type = 'ReleaseEvent')            as raw_releases,
+
+        -- Average reputation of all actors touching this repo (high = quality audience)
+        round(avg(actor_reputation)::numeric, 3) as avg_actor_reputation,
+        round(max(actor_reputation)::numeric, 3) as max_actor_reputation,
+
+        count(distinct actor_id) as unique_actors,
+
+        min(created_at) as first_event_at,
+        max(created_at) as last_event_at
+    from weighted_events
+    group by repo_id
+)
+
+select
+    repo_id,
+    repo_name,
+    round(authentic_score::numeric, 2) as authentic_score,
+    avg_actor_reputation,
+    max_actor_reputation,
+    unique_actors,
+    round(star_score::numeric, 2)      as star_score,
+    round(fork_score::numeric, 2)      as fork_score,
+    round(pr_score::numeric, 2)        as pr_score,
+    round(issue_score::numeric, 2)     as issue_score,
+    round(release_score::numeric, 2)   as release_score,
+    round(pr_review_score::numeric, 2) as pr_review_score,
+    raw_stars,
+    raw_forks,
+    raw_pr_opens,
+    raw_issue_opens,
+    raw_releases,
+    first_event_at,
+    last_event_at,
+    current_timestamp as _processed_at
+from repo_scored
+where authentic_score > 0
+order by authentic_score desc
+    );
+    
+  
+[0m03:28:02.387893 [debug] [Thread-1 (]: SQL status: OK in 0.571 seconds
+[0m03:28:02.388547 [debug] [Thread-1 (]: Using duckdb connection "model.github_signal.gold_authentic_trending"
+[0m03:28:02.388703 [debug] [Thread-1 (]: On model.github_signal.gold_authentic_trending: /* {"app": "dbt", "dbt_version": "1.11.17", "profile_name": "github_signal", "target_name": "dev", "node_id": "model.github_signal.gold_authentic_trending"} */
+
+    select count(*) as row_count from "warehouse"."main"."gold_authentic_trending__dbt_tmp"
+  
+[0m03:28:02.389260 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m03:28:02.389810 [debug] [Thread-1 (]: Writing runtime sql for node "model.github_signal.gold_authentic_trending"
+[0m03:28:02.390182 [debug] [Thread-1 (]: Using duckdb connection "model.github_signal.gold_authentic_trending"
+[0m03:28:02.390305 [debug] [Thread-1 (]: On model.github_signal.gold_authentic_trending: /* {"app": "dbt", "dbt_version": "1.11.17", "profile_name": "github_signal", "target_name": "dev", "node_id": "model.github_signal.gold_authentic_trending"} */
+
+[0m03:28:02.390432 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m03:28:02.391526 [debug] [Thread-1 (]: Using duckdb connection "model.github_signal.gold_authentic_trending"
+[0m03:28:02.391679 [debug] [Thread-1 (]: On model.github_signal.gold_authentic_trending: /* {"app": "dbt", "dbt_version": "1.11.17", "profile_name": "github_signal", "target_name": "dev", "node_id": "model.github_signal.gold_authentic_trending"} */
+copy "warehouse"."main"."gold_authentic_trending__dbt_tmp" to 's3://github-signal-raw/gold/authentic_trending/data.parquet' (overwrite_or_ignore 1, format parquet)
+[0m03:28:02.421928 [debug] [Thread-1 (]: SQL status: OK in 0.030 seconds
+[0m03:28:02.422529 [debug] [Thread-1 (]: Writing runtime sql for node "model.github_signal.gold_authentic_trending"
+[0m03:28:02.422930 [debug] [Thread-1 (]: Using duckdb connection "model.github_signal.gold_authentic_trending"
+[0m03:28:02.423084 [debug] [Thread-1 (]: On model.github_signal.gold_authentic_trending: /* {"app": "dbt", "dbt_version": "1.11.17", "profile_name": "github_signal", "target_name": "dev", "node_id": "model.github_signal.gold_authentic_trending"} */
+
+      create or replace view "warehouse"."main"."gold_authentic_trending__dbt_int" as (
+        select * from read_parquet('s3://github-signal-raw/gold/authentic_trending/data.parquet', union_by_name=False)
+        -- if relation is empty, filter by all columns having null values
+        
+      );
+    
+[0m03:28:02.433119 [debug] [Thread-1 (]: SQL status: OK in 0.010 seconds
+[0m03:28:02.435935 [debug] [Thread-1 (]: Using duckdb connection "model.github_signal.gold_authentic_trending"
+[0m03:28:02.436088 [debug] [Thread-1 (]: On model.github_signal.gold_authentic_trending: /* {"app": "dbt", "dbt_version": "1.11.17", "profile_name": "github_signal", "target_name": "dev", "node_id": "model.github_signal.gold_authentic_trending"} */
+alter view "warehouse"."main"."gold_authentic_trending__dbt_int" rename to "gold_authentic_trending"
+[0m03:28:02.436450 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m03:28:02.440795 [debug] [Thread-1 (]: On model.github_signal.gold_authentic_trending: COMMIT
+[0m03:28:02.440976 [debug] [Thread-1 (]: Using duckdb connection "model.github_signal.gold_authentic_trending"
+[0m03:28:02.441096 [debug] [Thread-1 (]: On model.github_signal.gold_authentic_trending: COMMIT
+[0m03:28:02.447422 [debug] [Thread-1 (]: SQL status: OK in 0.006 seconds
+[0m03:28:02.449964 [debug] [Thread-1 (]: Using duckdb connection "model.github_signal.gold_authentic_trending"
+[0m03:28:02.450147 [debug] [Thread-1 (]: On model.github_signal.gold_authentic_trending: /* {"app": "dbt", "dbt_version": "1.11.17", "profile_name": "github_signal", "target_name": "dev", "node_id": "model.github_signal.gold_authentic_trending"} */
+
+      drop table if exists "warehouse"."main"."gold_authentic_trending__dbt_backup" cascade
+    
+[0m03:28:02.450548 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m03:28:02.451783 [debug] [Thread-1 (]: Using duckdb connection "model.github_signal.gold_authentic_trending"
+[0m03:28:02.451919 [debug] [Thread-1 (]: On model.github_signal.gold_authentic_trending: /* {"app": "dbt", "dbt_version": "1.11.17", "profile_name": "github_signal", "target_name": "dev", "node_id": "model.github_signal.gold_authentic_trending"} */
+
+      drop table if exists "warehouse"."main"."gold_authentic_trending__dbt_tmp" cascade
+    
+[0m03:28:02.452345 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m03:28:02.453500 [debug] [Thread-1 (]: On model.github_signal.gold_authentic_trending: Close
+[0m03:28:02.454557 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '709d498f-61bd-416b-a2af-2223ceb12232', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10cadad50>]}
+[0m03:28:02.454835 [info ] [Thread-1 (]: 1 of 1 OK created sql external model main.gold_authentic_trending .............. [[32mOK[0m in 0.67s]
+[0m03:28:02.455137 [debug] [Thread-1 (]: Finished running node model.github_signal.gold_authentic_trending
+[0m03:28:02.455743 [debug] [MainThread]: Using duckdb connection "master"
+[0m03:28:02.455877 [debug] [MainThread]: On master: BEGIN
+[0m03:28:02.455982 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m03:28:02.456252 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m03:28:02.456357 [debug] [MainThread]: On master: COMMIT
+[0m03:28:02.456456 [debug] [MainThread]: Using duckdb connection "master"
+[0m03:28:02.456549 [debug] [MainThread]: On master: COMMIT
+[0m03:28:02.456699 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m03:28:02.456796 [debug] [MainThread]: On master: Close
+[0m03:28:02.456928 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m03:28:02.457026 [debug] [MainThread]: Connection 'model.github_signal.gold_authentic_trending' was properly closed.
+[0m03:28:02.457143 [info ] [MainThread]: 
+[0m03:28:02.457257 [info ] [MainThread]: Finished running 1 external model, 1 project hook in 0 hours 0 minutes and 0.92 seconds (0.92s).
+[0m03:28:02.457543 [debug] [MainThread]: Command end result
+[0m03:28:02.472296 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/fredoffei/Documents/github-signal-platform/dbt/target/manifest.json
+[0m03:28:02.473275 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/fredoffei/Documents/github-signal-platform/dbt/target/semantic_manifest.json
+[0m03:28:02.475601 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/fredoffei/Documents/github-signal-platform/dbt/target/run_results.json
+[0m03:28:02.475735 [info ] [MainThread]: 
+[0m03:28:02.475890 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m03:28:02.475999 [info ] [MainThread]: 
+[0m03:28:02.476121 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=2
+[0m03:28:02.477877 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 1.5331537, "process_in_blocks": "0", "process_kernel_time": 0.557823, "process_mem_max_rss": "540393472", "process_out_blocks": "0", "process_user_time": 2.468704}
+[0m03:28:02.478109 [debug] [MainThread]: Command `dbt run` succeeded at 03:28:02.478068 after 1.53 seconds
+[0m03:28:02.478276 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10cb8fc20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10cf93570>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10cf93430>]}
+[0m03:28:02.478429 [debug] [MainThread]: Flushing usage events
+[0m03:28:02.889159 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m03:28:25.671851 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108519fd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109753750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109753b10>]}
+
+
+============================== 03:28:25.675598 | b28a8cd6-8e2e-4111-a3bc-fe06acaed154 ==============================
+[0m03:28:25.675598 [info ] [MainThread]: Running with dbt=1.11.17
+[0m03:28:25.675923 [debug] [MainThread]: running dbt with arguments {'profiles_dir': '/Users/fredoffei/Documents/github-signal-platform/dbt', 'log_format': 'default', 'empty': 'None', 'log_cache_events': 'False', 'invocation_command': 'dbt test --select gold_authentic_trending', 'printer_width': '80', 'warn_error': 'None', 'send_anonymous_usage_stats': 'True', 'write_json': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'version_check': 'True', 'no_print': 'None', 'target_path': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'debug': 'False', 'introspect': 'True', 'use_colors': 'True', 'partial_parse': 'True', 'quiet': 'False', 'log_path': '/Users/fredoffei/Documents/github-signal-platform/dbt/logs', 'indirect_selection': 'eager', 'use_experimental_parser': 'False'}
+[0m03:28:25.799274 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'b28a8cd6-8e2e-4111-a3bc-fe06acaed154', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1089dd5b0>]}
+[0m03:28:25.821034 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'b28a8cd6-8e2e-4111-a3bc-fe06acaed154', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1098b6be0>]}
+[0m03:28:25.822630 [info ] [MainThread]: Registered adapter: duckdb=1.11.1
+[0m03:28:25.867334 [debug] [MainThread]: checksum: 6b6411fb925d7fe017d7428f9d9af996704b52c1bbfb75b401b39f0bcbc3f5dc, vars: {}, profile: , target: , version: 1.11.17
+[0m03:28:25.973035 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m03:28:25.973304 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m03:28:25.973431 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m03:28:25.999415 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'b28a8cd6-8e2e-4111-a3bc-fe06acaed154', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10997e550>]}
+[0m03:28:26.051408 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/fredoffei/Documents/github-signal-platform/dbt/target/manifest.json
+[0m03:28:26.053600 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/fredoffei/Documents/github-signal-platform/dbt/target/semantic_manifest.json
+[0m03:28:26.065127 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'b28a8cd6-8e2e-4111-a3bc-fe06acaed154', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a00f5c0>]}
+[0m03:28:26.065420 [info ] [MainThread]: Found 6 models, 23 data tests, 1 operation, 2 sources, 513 macros
+[0m03:28:26.065602 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b28a8cd6-8e2e-4111-a3bc-fe06acaed154', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1096df770>]}
+[0m03:28:26.066495 [info ] [MainThread]: 
+[0m03:28:26.066655 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m03:28:26.066766 [info ] [MainThread]: 
+[0m03:28:26.066976 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m03:28:26.069024 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_warehouse_main'
+[0m03:28:26.098029 [debug] [ThreadPool]: Using duckdb connection "list_warehouse_main"
+[0m03:28:26.098263 [debug] [ThreadPool]: On list_warehouse_main: BEGIN
+[0m03:28:26.098385 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m03:28:26.282545 [debug] [ThreadPool]: SQL status: OK in 0.184 seconds
+[0m03:28:26.282796 [debug] [ThreadPool]: Using duckdb connection "list_warehouse_main"
+[0m03:28:26.282930 [debug] [ThreadPool]: On list_warehouse_main: /* {"app": "dbt", "dbt_version": "1.11.17", "profile_name": "github_signal", "target_name": "dev", "connection_name": "list_warehouse_main"} */
+select
+      'warehouse' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'warehouse'
+  
+[0m03:28:26.312889 [debug] [ThreadPool]: SQL status: OK in 0.030 seconds
+[0m03:28:26.314031 [debug] [ThreadPool]: On list_warehouse_main: ROLLBACK
+[0m03:28:26.315268 [debug] [ThreadPool]: On list_warehouse_main: Close
+[0m03:28:26.315988 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b28a8cd6-8e2e-4111-a3bc-fe06acaed154', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a27ea90>]}
+[0m03:28:26.316237 [debug] [MainThread]: Using duckdb connection "master"
+[0m03:28:26.316357 [debug] [MainThread]: On master: BEGIN
+[0m03:28:26.316460 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m03:28:26.316715 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m03:28:26.316818 [debug] [MainThread]: On master: COMMIT
+[0m03:28:26.316918 [debug] [MainThread]: Using duckdb connection "master"
+[0m03:28:26.317013 [debug] [MainThread]: On master: COMMIT
+[0m03:28:26.317182 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m03:28:26.320335 [debug] [MainThread]: Writing injected SQL for node "operation.github_signal.github_signal-on-run-start-0"
+[0m03:28:26.322417 [info ] [MainThread]: 1 of 1 START hook: github_signal.on-run-start.0 ................................ [RUN]
+[0m03:28:26.322660 [debug] [MainThread]: Using duckdb connection "master"
+[0m03:28:26.322795 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.11.17", "profile_name": "github_signal", "target_name": "dev", "connection_name": "master"} */
+
+  INSTALL httpfs;
+  LOAD httpfs;
+  CREATE OR REPLACE SECRET minio_s3 (
+    TYPE S3,
+    KEY_ID 'ghsignal',
+    SECRET 'ghsignal_dev_password',
+    REGION 'us-east-1',
+    ENDPOINT 'localhost:9000',
+    URL_STYLE 'path',
+    USE_SSL false
+  );
+
+[0m03:28:26.324608 [debug] [MainThread]: SQL status: OK in 0.002 seconds
+[0m03:28:26.325046 [info ] [MainThread]: 1 of 1 OK hook: github_signal.on-run-start.0 ................................... [[32mOK[0m in 0.01s]
+[0m03:28:26.325178 [info ] [MainThread]: 
+[0m03:28:26.325308 [debug] [MainThread]: On master: Close
+[0m03:28:26.326627 [debug] [Thread-1 (]: Began running node test.github_signal.not_null_gold_authentic_trending_authentic_score.08a85113e1
+[0m03:28:26.326800 [info ] [Thread-1 (]: 1 of 4 START test not_null_gold_authentic_trending_authentic_score ............. [RUN]
+[0m03:28:26.326977 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_warehouse_main, now test.github_signal.not_null_gold_authentic_trending_authentic_score.08a85113e1)
+[0m03:28:26.327103 [debug] [Thread-1 (]: Began compiling node test.github_signal.not_null_gold_authentic_trending_authentic_score.08a85113e1
+[0m03:28:26.332700 [debug] [Thread-1 (]: Writing injected SQL for node "test.github_signal.not_null_gold_authentic_trending_authentic_score.08a85113e1"
+[0m03:28:26.333232 [debug] [Thread-1 (]: Began executing node test.github_signal.not_null_gold_authentic_trending_authentic_score.08a85113e1
+[0m03:28:26.334022 [debug] [Thread-1 (]: Using duckdb connection "test.github_signal.not_null_gold_authentic_trending_authentic_score.08a85113e1"
+[0m03:28:26.334170 [debug] [Thread-1 (]: On test.github_signal.not_null_gold_authentic_trending_authentic_score.08a85113e1: /* {"app": "dbt", "dbt_version": "1.11.17", "profile_name": "github_signal", "target_name": "dev", "node_id": "test.github_signal.not_null_gold_authentic_trending_authentic_score.08a85113e1"} */
+select database_name, type from duckdb_databases()
+[0m03:28:26.334297 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m03:28:26.335252 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m03:28:26.335923 [debug] [Thread-1 (]: Using duckdb connection "test.github_signal.not_null_gold_authentic_trending_authentic_score.08a85113e1"
+[0m03:28:26.336073 [debug] [Thread-1 (]: On test.github_signal.not_null_gold_authentic_trending_authentic_score.08a85113e1: /* {"app": "dbt", "dbt_version": "1.11.17", "profile_name": "github_signal", "target_name": "dev", "node_id": "test.github_signal.not_null_gold_authentic_trending_authentic_score.08a85113e1"} */
+
+                    select table_name, constraint_type from duckdb_constraints()
+                    where lower(database_name) = lower('warehouse')
+                      and lower(schema_name) = lower('main_dbt_test__audit')
+                      and constraint_type in ('PRIMARY KEY', 'UNIQUE', 'FOREIGN KEY')
+                    
+[0m03:28:26.339958 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m03:28:26.347239 [debug] [Thread-1 (]: Writing runtime sql for node "test.github_signal.not_null_gold_authentic_trending_authentic_score.08a85113e1"
+[0m03:28:26.347763 [debug] [Thread-1 (]: Using duckdb connection "test.github_signal.not_null_gold_authentic_trending_authentic_score.08a85113e1"
+[0m03:28:26.347905 [debug] [Thread-1 (]: On test.github_signal.not_null_gold_authentic_trending_authentic_score.08a85113e1: BEGIN
+[0m03:28:26.348300 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m03:28:26.348518 [debug] [Thread-1 (]: Using duckdb connection "test.github_signal.not_null_gold_authentic_trending_authentic_score.08a85113e1"
+[0m03:28:26.348667 [debug] [Thread-1 (]: On test.github_signal.not_null_gold_authentic_trending_authentic_score.08a85113e1: /* {"app": "dbt", "dbt_version": "1.11.17", "profile_name": "github_signal", "target_name": "dev", "node_id": "test.github_signal.not_null_gold_authentic_trending_authentic_score.08a85113e1"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select authentic_score
+from "warehouse"."main"."gold_authentic_trending"
+where authentic_score is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m03:28:26.370354 [debug] [Thread-1 (]: SQL status: OK in 0.021 seconds
+[0m03:28:26.372419 [debug] [Thread-1 (]: On test.github_signal.not_null_gold_authentic_trending_authentic_score.08a85113e1: ROLLBACK
+[0m03:28:26.372694 [debug] [Thread-1 (]: On test.github_signal.not_null_gold_authentic_trending_authentic_score.08a85113e1: Close
+[0m03:28:26.372960 [info ] [Thread-1 (]: 1 of 4 PASS not_null_gold_authentic_trending_authentic_score ................... [[32mPASS[0m in 0.05s]
+[0m03:28:26.373264 [debug] [Thread-1 (]: Finished running node test.github_signal.not_null_gold_authentic_trending_authentic_score.08a85113e1
+[0m03:28:26.373501 [debug] [Thread-1 (]: Began running node test.github_signal.not_null_gold_authentic_trending_repo_id.ce99bc6869
+[0m03:28:26.373721 [info ] [Thread-1 (]: 2 of 4 START test not_null_gold_authentic_trending_repo_id ..................... [RUN]
+[0m03:28:26.373956 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.github_signal.not_null_gold_authentic_trending_authentic_score.08a85113e1, now test.github_signal.not_null_gold_authentic_trending_repo_id.ce99bc6869)
+[0m03:28:26.374105 [debug] [Thread-1 (]: Began compiling node test.github_signal.not_null_gold_authentic_trending_repo_id.ce99bc6869
+[0m03:28:26.375777 [debug] [Thread-1 (]: Writing injected SQL for node "test.github_signal.not_null_gold_authentic_trending_repo_id.ce99bc6869"
+[0m03:28:26.376169 [debug] [Thread-1 (]: Began executing node test.github_signal.not_null_gold_authentic_trending_repo_id.ce99bc6869
+[0m03:28:26.377138 [debug] [Thread-1 (]: Writing runtime sql for node "test.github_signal.not_null_gold_authentic_trending_repo_id.ce99bc6869"
+[0m03:28:26.377410 [debug] [Thread-1 (]: Using duckdb connection "test.github_signal.not_null_gold_authentic_trending_repo_id.ce99bc6869"
+[0m03:28:26.377537 [debug] [Thread-1 (]: On test.github_signal.not_null_gold_authentic_trending_repo_id.ce99bc6869: BEGIN
+[0m03:28:26.377652 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m03:28:26.377905 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m03:28:26.378020 [debug] [Thread-1 (]: Using duckdb connection "test.github_signal.not_null_gold_authentic_trending_repo_id.ce99bc6869"
+[0m03:28:26.378137 [debug] [Thread-1 (]: On test.github_signal.not_null_gold_authentic_trending_repo_id.ce99bc6869: /* {"app": "dbt", "dbt_version": "1.11.17", "profile_name": "github_signal", "target_name": "dev", "node_id": "test.github_signal.not_null_gold_authentic_trending_repo_id.ce99bc6869"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select repo_id
+from "warehouse"."main"."gold_authentic_trending"
+where repo_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m03:28:26.379969 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m03:28:26.380758 [debug] [Thread-1 (]: On test.github_signal.not_null_gold_authentic_trending_repo_id.ce99bc6869: ROLLBACK
+[0m03:28:26.381050 [debug] [Thread-1 (]: On test.github_signal.not_null_gold_authentic_trending_repo_id.ce99bc6869: Close
+[0m03:28:26.381317 [info ] [Thread-1 (]: 2 of 4 PASS not_null_gold_authentic_trending_repo_id ........................... [[32mPASS[0m in 0.01s]
+[0m03:28:26.381597 [debug] [Thread-1 (]: Finished running node test.github_signal.not_null_gold_authentic_trending_repo_id.ce99bc6869
+[0m03:28:26.381772 [debug] [Thread-1 (]: Began running node test.github_signal.not_null_gold_authentic_trending_repo_name.b3d0ba9040
+[0m03:28:26.381943 [info ] [Thread-1 (]: 3 of 4 START test not_null_gold_authentic_trending_repo_name ................... [RUN]
+[0m03:28:26.382112 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.github_signal.not_null_gold_authentic_trending_repo_id.ce99bc6869, now test.github_signal.not_null_gold_authentic_trending_repo_name.b3d0ba9040)
+[0m03:28:26.382243 [debug] [Thread-1 (]: Began compiling node test.github_signal.not_null_gold_authentic_trending_repo_name.b3d0ba9040
+[0m03:28:26.383827 [debug] [Thread-1 (]: Writing injected SQL for node "test.github_signal.not_null_gold_authentic_trending_repo_name.b3d0ba9040"
+[0m03:28:26.384207 [debug] [Thread-1 (]: Began executing node test.github_signal.not_null_gold_authentic_trending_repo_name.b3d0ba9040
+[0m03:28:26.384965 [debug] [Thread-1 (]: Writing runtime sql for node "test.github_signal.not_null_gold_authentic_trending_repo_name.b3d0ba9040"
+[0m03:28:26.385222 [debug] [Thread-1 (]: Using duckdb connection "test.github_signal.not_null_gold_authentic_trending_repo_name.b3d0ba9040"
+[0m03:28:26.385344 [debug] [Thread-1 (]: On test.github_signal.not_null_gold_authentic_trending_repo_name.b3d0ba9040: BEGIN
+[0m03:28:26.385457 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m03:28:26.385694 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m03:28:26.385807 [debug] [Thread-1 (]: Using duckdb connection "test.github_signal.not_null_gold_authentic_trending_repo_name.b3d0ba9040"
+[0m03:28:26.385921 [debug] [Thread-1 (]: On test.github_signal.not_null_gold_authentic_trending_repo_name.b3d0ba9040: /* {"app": "dbt", "dbt_version": "1.11.17", "profile_name": "github_signal", "target_name": "dev", "node_id": "test.github_signal.not_null_gold_authentic_trending_repo_name.b3d0ba9040"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select repo_name
+from "warehouse"."main"."gold_authentic_trending"
+where repo_name is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m03:28:26.387768 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m03:28:26.388647 [debug] [Thread-1 (]: On test.github_signal.not_null_gold_authentic_trending_repo_name.b3d0ba9040: ROLLBACK
+[0m03:28:26.388943 [debug] [Thread-1 (]: On test.github_signal.not_null_gold_authentic_trending_repo_name.b3d0ba9040: Close
+[0m03:28:26.389201 [info ] [Thread-1 (]: 3 of 4 PASS not_null_gold_authentic_trending_repo_name ......................... [[32mPASS[0m in 0.01s]
+[0m03:28:26.389407 [debug] [Thread-1 (]: Finished running node test.github_signal.not_null_gold_authentic_trending_repo_name.b3d0ba9040
+[0m03:28:26.389563 [debug] [Thread-1 (]: Began running node test.github_signal.unique_gold_authentic_trending_repo_id.ee7bb58d99
+[0m03:28:26.389782 [info ] [Thread-1 (]: 4 of 4 START test unique_gold_authentic_trending_repo_id ....................... [RUN]
+[0m03:28:26.390066 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.github_signal.not_null_gold_authentic_trending_repo_name.b3d0ba9040, now test.github_signal.unique_gold_authentic_trending_repo_id.ee7bb58d99)
+[0m03:28:26.390224 [debug] [Thread-1 (]: Began compiling node test.github_signal.unique_gold_authentic_trending_repo_id.ee7bb58d99
+[0m03:28:26.392985 [debug] [Thread-1 (]: Writing injected SQL for node "test.github_signal.unique_gold_authentic_trending_repo_id.ee7bb58d99"
+[0m03:28:26.393425 [debug] [Thread-1 (]: Began executing node test.github_signal.unique_gold_authentic_trending_repo_id.ee7bb58d99
+[0m03:28:26.394220 [debug] [Thread-1 (]: Writing runtime sql for node "test.github_signal.unique_gold_authentic_trending_repo_id.ee7bb58d99"
+[0m03:28:26.394505 [debug] [Thread-1 (]: Using duckdb connection "test.github_signal.unique_gold_authentic_trending_repo_id.ee7bb58d99"
+[0m03:28:26.394633 [debug] [Thread-1 (]: On test.github_signal.unique_gold_authentic_trending_repo_id.ee7bb58d99: BEGIN
+[0m03:28:26.394751 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m03:28:26.395069 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m03:28:26.395185 [debug] [Thread-1 (]: Using duckdb connection "test.github_signal.unique_gold_authentic_trending_repo_id.ee7bb58d99"
+[0m03:28:26.395303 [debug] [Thread-1 (]: On test.github_signal.unique_gold_authentic_trending_repo_id.ee7bb58d99: /* {"app": "dbt", "dbt_version": "1.11.17", "profile_name": "github_signal", "target_name": "dev", "node_id": "test.github_signal.unique_gold_authentic_trending_repo_id.ee7bb58d99"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    repo_id as unique_field,
+    count(*) as n_records
+
+from "warehouse"."main"."gold_authentic_trending"
+where repo_id is not null
+group by repo_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m03:28:26.402128 [debug] [Thread-1 (]: SQL status: OK in 0.007 seconds
+[0m03:28:26.403065 [debug] [Thread-1 (]: On test.github_signal.unique_gold_authentic_trending_repo_id.ee7bb58d99: ROLLBACK
+[0m03:28:26.403428 [debug] [Thread-1 (]: On test.github_signal.unique_gold_authentic_trending_repo_id.ee7bb58d99: Close
+[0m03:28:26.403690 [info ] [Thread-1 (]: 4 of 4 PASS unique_gold_authentic_trending_repo_id ............................. [[32mPASS[0m in 0.01s]
+[0m03:28:26.403895 [debug] [Thread-1 (]: Finished running node test.github_signal.unique_gold_authentic_trending_repo_id.ee7bb58d99
+[0m03:28:26.404543 [debug] [MainThread]: Using duckdb connection "master"
+[0m03:28:26.404730 [debug] [MainThread]: On master: BEGIN
+[0m03:28:26.404843 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m03:28:26.405102 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m03:28:26.405210 [debug] [MainThread]: On master: COMMIT
+[0m03:28:26.405309 [debug] [MainThread]: Using duckdb connection "master"
+[0m03:28:26.405403 [debug] [MainThread]: On master: COMMIT
+[0m03:28:26.405597 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m03:28:26.405748 [debug] [MainThread]: On master: Close
+[0m03:28:26.405897 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m03:28:26.405998 [debug] [MainThread]: Connection 'test.github_signal.unique_gold_authentic_trending_repo_id.ee7bb58d99' was properly closed.
+[0m03:28:26.406111 [info ] [MainThread]: 
+[0m03:28:26.406224 [info ] [MainThread]: Finished running 1 project hook, 4 data tests in 0 hours 0 minutes and 0.34 seconds (0.34s).
+[0m03:28:26.406609 [debug] [MainThread]: Command end result
+[0m03:28:26.422570 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/fredoffei/Documents/github-signal-platform/dbt/target/manifest.json
+[0m03:28:26.423597 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/fredoffei/Documents/github-signal-platform/dbt/target/semantic_manifest.json
+[0m03:28:26.426373 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/fredoffei/Documents/github-signal-platform/dbt/target/run_results.json
+[0m03:28:26.426514 [info ] [MainThread]: 
+[0m03:28:26.426660 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m03:28:26.426771 [info ] [MainThread]: 
+[0m03:28:26.426896 [info ] [MainThread]: Done. PASS=5 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=5
+[0m03:28:26.428618 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": true, "command_wall_clock_time": 0.79209894, "process_in_blocks": "0", "process_kernel_time": 0.358256, "process_mem_max_rss": "195051520", "process_out_blocks": "0", "process_user_time": 1.171434}
+[0m03:28:26.428812 [debug] [MainThread]: Command `dbt test` succeeded at 03:28:26.428778 after 0.79 seconds
+[0m03:28:26.428963 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1094e7d10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a01f280>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a01fa10>]}
+[0m03:28:26.429109 [debug] [MainThread]: Flushing usage events
+[0m03:28:27.009870 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m03:36:41.478747 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108f09fd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a143750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a143b10>]}
+
+
+============================== 03:36:41.481632 | d7a3e4c5-0583-4746-a012-ca349f71f8ae ==============================
+[0m03:36:41.481632 [info ] [MainThread]: Running with dbt=1.11.17
+[0m03:36:41.481960 [debug] [MainThread]: running dbt with arguments {'send_anonymous_usage_stats': 'True', 'static_parser': 'True', 'printer_width': '80', 'log_path': '/Users/fredoffei/Documents/github-signal-platform/dbt/logs', 'write_json': 'True', 'invocation_command': 'dbt run --select gold_authentic_trending', 'no_print': 'None', 'fail_fast': 'False', 'profiles_dir': '/Users/fredoffei/Documents/github-signal-platform/dbt', 'use_colors': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_format': 'default', 'version_check': 'True', 'use_experimental_parser': 'False', 'introspect': 'True', 'debug': 'False', 'quiet': 'False', 'warn_error': 'None', 'cache_selected_only': 'False', 'log_cache_events': 'False', 'partial_parse': 'True', 'indirect_selection': 'eager', 'target_path': 'None', 'empty': 'False'}
+[0m03:36:41.608066 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'd7a3e4c5-0583-4746-a012-ca349f71f8ae', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1093d15b0>]}
+[0m03:36:41.630468 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'd7a3e4c5-0583-4746-a012-ca349f71f8ae', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a2b2be0>]}
+[0m03:36:41.631841 [info ] [MainThread]: Registered adapter: duckdb=1.11.1
+[0m03:36:41.676264 [debug] [MainThread]: checksum: 6b6411fb925d7fe017d7428f9d9af996704b52c1bbfb75b401b39f0bcbc3f5dc, vars: {}, profile: , target: , version: 1.11.17
+[0m03:36:41.748838 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m03:36:41.749180 [debug] [MainThread]: Partial parsing: updated file: github_signal://models/gold/gold_authentic_trending.sql
+[0m03:36:41.937800 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'd7a3e4c5-0583-4746-a012-ca349f71f8ae', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a86bb50>]}
+[0m03:36:41.988873 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/fredoffei/Documents/github-signal-platform/dbt/target/manifest.json
+[0m03:36:41.990106 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/fredoffei/Documents/github-signal-platform/dbt/target/semantic_manifest.json
+[0m03:36:41.997433 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'd7a3e4c5-0583-4746-a012-ca349f71f8ae', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a847d40>]}
+[0m03:36:41.997698 [info ] [MainThread]: Found 6 models, 23 data tests, 1 operation, 2 sources, 513 macros
+[0m03:36:41.997851 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'd7a3e4c5-0583-4746-a012-ca349f71f8ae', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10abde270>]}
+[0m03:36:41.998632 [info ] [MainThread]: 
+[0m03:36:41.998781 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m03:36:41.998888 [info ] [MainThread]: 
+[0m03:36:41.999078 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m03:36:41.999454 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_warehouse'
+[0m03:36:42.028998 [debug] [ThreadPool]: Using duckdb connection "list_warehouse"
+[0m03:36:42.029225 [debug] [ThreadPool]: On list_warehouse: /* {"app": "dbt", "dbt_version": "1.11.17", "profile_name": "github_signal", "target_name": "dev", "connection_name": "list_warehouse"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"warehouse"'
+    
+  
+  
+[0m03:36:42.029352 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m03:36:42.256999 [debug] [ThreadPool]: SQL status: OK in 0.228 seconds
+[0m03:36:42.257988 [debug] [ThreadPool]: On list_warehouse: Close
+[0m03:36:42.258313 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_warehouse, now create_warehouse_main)
+[0m03:36:42.258497 [debug] [ThreadPool]: Creating schema "database: "warehouse"
+schema: "main"
+"
+[0m03:36:42.261697 [debug] [ThreadPool]: Using duckdb connection "create_warehouse_main"
+[0m03:36:42.261840 [debug] [ThreadPool]: On create_warehouse_main: /* {"app": "dbt", "dbt_version": "1.11.17", "profile_name": "github_signal", "target_name": "dev", "connection_name": "create_warehouse_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='warehouse'
+        and type != 'duckdb'
+    
+  
+[0m03:36:42.261947 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m03:36:42.263717 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m03:36:42.264174 [debug] [ThreadPool]: Using duckdb connection "create_warehouse_main"
+[0m03:36:42.264284 [debug] [ThreadPool]: On create_warehouse_main: BEGIN
+[0m03:36:42.264618 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m03:36:42.264713 [debug] [ThreadPool]: Using duckdb connection "create_warehouse_main"
+[0m03:36:42.264811 [debug] [ThreadPool]: On create_warehouse_main: /* {"app": "dbt", "dbt_version": "1.11.17", "profile_name": "github_signal", "target_name": "dev", "connection_name": "create_warehouse_main"} */
+
+    
+    
+        create schema if not exists "warehouse"."main"
+    
+[0m03:36:42.265416 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m03:36:42.265694 [debug] [ThreadPool]: On create_warehouse_main: COMMIT
+[0m03:36:42.265800 [debug] [ThreadPool]: Using duckdb connection "create_warehouse_main"
+[0m03:36:42.265899 [debug] [ThreadPool]: On create_warehouse_main: COMMIT
+[0m03:36:42.266074 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m03:36:42.266242 [debug] [ThreadPool]: On create_warehouse_main: Close
+[0m03:36:42.268382 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_warehouse_main, now list_warehouse_main)
+[0m03:36:42.270652 [debug] [ThreadPool]: Using duckdb connection "list_warehouse_main"
+[0m03:36:42.270769 [debug] [ThreadPool]: On list_warehouse_main: BEGIN
+[0m03:36:42.270861 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m03:36:42.271028 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m03:36:42.271123 [debug] [ThreadPool]: Using duckdb connection "list_warehouse_main"
+[0m03:36:42.271221 [debug] [ThreadPool]: On list_warehouse_main: /* {"app": "dbt", "dbt_version": "1.11.17", "profile_name": "github_signal", "target_name": "dev", "connection_name": "list_warehouse_main"} */
+select
+      'warehouse' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'warehouse'
+  
+[0m03:36:42.284270 [debug] [ThreadPool]: SQL status: OK in 0.013 seconds
+[0m03:36:42.285222 [debug] [ThreadPool]: On list_warehouse_main: ROLLBACK
+[0m03:36:42.285975 [debug] [ThreadPool]: On list_warehouse_main: Close
+[0m03:36:42.286461 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'd7a3e4c5-0583-4746-a012-ca349f71f8ae', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ac43d40>]}
+[0m03:36:42.286668 [debug] [MainThread]: Using duckdb connection "master"
+[0m03:36:42.286782 [debug] [MainThread]: On master: BEGIN
+[0m03:36:42.286880 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m03:36:42.287065 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m03:36:42.287186 [debug] [MainThread]: On master: COMMIT
+[0m03:36:42.287294 [debug] [MainThread]: Using duckdb connection "master"
+[0m03:36:42.287396 [debug] [MainThread]: On master: COMMIT
+[0m03:36:42.287557 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m03:36:42.290557 [debug] [MainThread]: Writing injected SQL for node "operation.github_signal.github_signal-on-run-start-0"
+[0m03:36:42.292597 [info ] [MainThread]: 1 of 1 START hook: github_signal.on-run-start.0 ................................ [RUN]
+[0m03:36:42.292800 [debug] [MainThread]: Using duckdb connection "master"
+[0m03:36:42.292931 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.11.17", "profile_name": "github_signal", "target_name": "dev", "connection_name": "master"} */
+
+  INSTALL httpfs;
+  LOAD httpfs;
+  CREATE OR REPLACE SECRET minio_s3 (
+    TYPE S3,
+    KEY_ID 'ghsignal',
+    SECRET 'ghsignal_dev_password',
+    REGION 'us-east-1',
+    ENDPOINT 'localhost:9000',
+    URL_STYLE 'path',
+    USE_SSL false
+  );
+
+[0m03:36:42.294536 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m03:36:42.294987 [info ] [MainThread]: 1 of 1 OK hook: github_signal.on-run-start.0 ................................... [[32mOK[0m in 0.01s]
+[0m03:36:42.295117 [info ] [MainThread]: 
+[0m03:36:42.295236 [debug] [MainThread]: On master: Close
+[0m03:36:42.296374 [debug] [Thread-1 (]: Began running node model.github_signal.gold_authentic_trending
+[0m03:36:42.296585 [info ] [Thread-1 (]: 1 of 1 START sql external model main.gold_authentic_trending ................... [RUN]
+[0m03:36:42.296756 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_warehouse_main, now model.github_signal.gold_authentic_trending)
+[0m03:36:42.296885 [debug] [Thread-1 (]: Began compiling node model.github_signal.gold_authentic_trending
+[0m03:36:42.298888 [debug] [Thread-1 (]: Writing injected SQL for node "model.github_signal.gold_authentic_trending"
+[0m03:36:42.299454 [debug] [Thread-1 (]: Began executing node model.github_signal.gold_authentic_trending
+[0m03:36:42.300235 [debug] [Thread-1 (]: Using duckdb connection "model.github_signal.gold_authentic_trending"
+[0m03:36:42.300421 [debug] [Thread-1 (]: On model.github_signal.gold_authentic_trending: /* {"app": "dbt", "dbt_version": "1.11.17", "profile_name": "github_signal", "target_name": "dev", "node_id": "model.github_signal.gold_authentic_trending"} */
+select database_name, type from duckdb_databases()
+[0m03:36:42.300562 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m03:36:42.301129 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m03:36:42.301751 [debug] [Thread-1 (]: Using duckdb connection "model.github_signal.gold_authentic_trending"
+[0m03:36:42.301899 [debug] [Thread-1 (]: On model.github_signal.gold_authentic_trending: /* {"app": "dbt", "dbt_version": "1.11.17", "profile_name": "github_signal", "target_name": "dev", "node_id": "model.github_signal.gold_authentic_trending"} */
+
+                    select table_name, constraint_type from duckdb_constraints()
+                    where lower(database_name) = lower('warehouse')
+                      and lower(schema_name) = lower('main')
+                      and constraint_type in ('PRIMARY KEY', 'UNIQUE', 'FOREIGN KEY')
+                    
+[0m03:36:42.305579 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m03:36:42.329887 [debug] [Thread-1 (]: Using duckdb connection "model.github_signal.gold_authentic_trending"
+[0m03:36:42.330120 [debug] [Thread-1 (]: On model.github_signal.gold_authentic_trending: BEGIN
+[0m03:36:42.330395 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m03:36:42.330515 [debug] [Thread-1 (]: Using duckdb connection "model.github_signal.gold_authentic_trending"
+[0m03:36:42.330698 [debug] [Thread-1 (]: On model.github_signal.gold_authentic_trending: /* {"app": "dbt", "dbt_version": "1.11.17", "profile_name": "github_signal", "target_name": "dev", "node_id": "model.github_signal.gold_authentic_trending"} */
+
+    
+
+    create  table
+      "warehouse"."main"."gold_authentic_trending__dbt_tmp"
+  
+    
+    as (
+      -- depends_on: "warehouse"."main"."silver_events"
+
+
+
+with events as (
+    select *
+    from read_parquet('s3://github-signal-raw/silver/events/*.parquet')
+    where actor_is_bot = false
+      and repo_id is not null
+),
+
+actors as (
+    select
+        actor_id,
+        coalesce(reputation_score, 0.1) as reputation_score
+    from read_parquet('s3://github-signal-raw/silver/actors_enriched/data.parquet')
+),
+
+actors_scored as (
+    select
+        actor_id,
+        -- Reputation score (computed here so we don't depend on what's in actors_enriched)
+        -- Range roughly 0 to 5+
+        case
+            when coalesce(status, 'missing') != 'enriched' then 0.1       -- unenriched baseline
+            when coalesce(account_type, 'User') = 'Organization' then 2.5  -- orgs are real entities
+            else
+                0.3 * ln(coalesce(followers, 0) + 1)
+                + 0.2 * ln(coalesce(public_repos, 0) + 1)
+                + 0.1 * (
+                    cast(coalesce(has_bio, false) as int)
+                    + cast(coalesce(has_company, false) as int)
+                    + cast(coalesce(has_location, false) as int)
+                    + cast(coalesce(has_custom_avatar, false) as int)
+                )
+                + 0.4 * least(
+                    date_diff('year', coalesce(github_created_at, current_timestamp)::timestamp, current_timestamp),
+                    3.0
+                )
+        end as reputation_score
+    from actors
+),
+
+event_weights(event_type, weight) as (
+    values
+        ('WatchEvent', 3.0),
+        ('ForkEvent', 5.0),
+        ('PullRequestEvent', 10.0),
+        ('IssuesEvent', 2.0),
+        ('ReleaseEvent', 15.0),
+        ('PullRequestReviewEvent', 4.0)
+),
+
+weighted_events as (
+    select
+        e.repo_id,
+        e.repo_name,
+        e.event_type,
+        e.actor_id,
+        e.created_at,
+        w.weight as event_weight,
+        coalesce(a.reputation_score, 0.1) as actor_reputation,
+        w.weight * coalesce(a.reputation_score, 0.1) as authentic_event_score
+    from events e
+    inner join event_weights w on e.event_type = w.event_type
+    left join actors a on e.actor_id = a.actor_id  
+    where (e.event_type != 'PullRequestEvent' or e.payload_action = 'opened')
+      and (e.event_type != 'IssuesEvent' or e.payload_action = 'opened')
+),
+
+actor_repo_scores as (
+    select
+        repo_id,
+        repo_name,
+        actor_id,
+        -- Cap each actor's contribution to one repo at 20 points
+        -- Prevents single-actor bulk operations from dominating
+        least(sum(authentic_event_score), 20.0) as capped_contribution,
+        
+        -- Also track per-actor stats for diagnostics
+        sum(authentic_event_score)  as raw_contribution,
+        count(*)                    as events_from_actor,
+        max(actor_reputation)       as actor_reputation
+    from weighted_events
+    group by repo_id, repo_name, actor_id
+),
+
+repo_scored as (
+    select
+        repo_id,
+        arg_max(repo_name, '2026-10-01'::date) as repo_name,  -- any value since no created_at here
+        
+        -- The capped score — diverse contributors beat single bulk actors
+        sum(capped_contribution) as authentic_score,
+        
+        -- Raw uncapped score for comparison
+        sum(raw_contribution) as raw_authentic_score,
+        
+        count(distinct actor_id)  as unique_actors,
+        avg(actor_reputation)     as avg_actor_reputation,
+        max(actor_reputation)     as max_actor_reputation,
+        
+        -- Concentration metric: what fraction of score comes from top 1 actor?
+        max(raw_contribution) / nullif(sum(raw_contribution), 0) as top_actor_share,
+        
+        sum(events_from_actor) as total_events
+    from actor_repo_scores
+    group by repo_id
+)
+
+select
+    repo_id,
+    repo_name,
+    round(authentic_score::numeric, 2) as authentic_score,
+    round(raw_authentic_score::numeric, 2) as raw_authentic_score,
+    unique_actors,
+    round(avg_actor_reputation::numeric, 3) as avg_actor_reputation,
+    round(top_actor_share::numeric, 3) as top_actor_share,
+    total_events,
+    current_timestamp as _processed_at
+from repo_scored
+where authentic_score > 0
+order by authentic_score desc
+    );
+    
+  
+[0m03:36:42.815449 [debug] [Thread-1 (]: SQL status: OK in 0.484 seconds
+[0m03:36:42.816092 [debug] [Thread-1 (]: Using duckdb connection "model.github_signal.gold_authentic_trending"
+[0m03:36:42.816247 [debug] [Thread-1 (]: On model.github_signal.gold_authentic_trending: /* {"app": "dbt", "dbt_version": "1.11.17", "profile_name": "github_signal", "target_name": "dev", "node_id": "model.github_signal.gold_authentic_trending"} */
+
+    select count(*) as row_count from "warehouse"."main"."gold_authentic_trending__dbt_tmp"
+  
+[0m03:36:42.816921 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m03:36:42.817610 [debug] [Thread-1 (]: Writing runtime sql for node "model.github_signal.gold_authentic_trending"
+[0m03:36:42.818195 [debug] [Thread-1 (]: Using duckdb connection "model.github_signal.gold_authentic_trending"
+[0m03:36:42.818388 [debug] [Thread-1 (]: On model.github_signal.gold_authentic_trending: /* {"app": "dbt", "dbt_version": "1.11.17", "profile_name": "github_signal", "target_name": "dev", "node_id": "model.github_signal.gold_authentic_trending"} */
+
+[0m03:36:42.818543 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m03:36:42.819656 [debug] [Thread-1 (]: Using duckdb connection "model.github_signal.gold_authentic_trending"
+[0m03:36:42.819802 [debug] [Thread-1 (]: On model.github_signal.gold_authentic_trending: /* {"app": "dbt", "dbt_version": "1.11.17", "profile_name": "github_signal", "target_name": "dev", "node_id": "model.github_signal.gold_authentic_trending"} */
+copy "warehouse"."main"."gold_authentic_trending__dbt_tmp" to 's3://github-signal-raw/gold/authentic_trending/data.parquet' (overwrite_or_ignore 1, format parquet)
+[0m03:36:42.842320 [debug] [Thread-1 (]: SQL status: OK in 0.022 seconds
+[0m03:36:42.842917 [debug] [Thread-1 (]: Writing runtime sql for node "model.github_signal.gold_authentic_trending"
+[0m03:36:42.843293 [debug] [Thread-1 (]: Using duckdb connection "model.github_signal.gold_authentic_trending"
+[0m03:36:42.843431 [debug] [Thread-1 (]: On model.github_signal.gold_authentic_trending: /* {"app": "dbt", "dbt_version": "1.11.17", "profile_name": "github_signal", "target_name": "dev", "node_id": "model.github_signal.gold_authentic_trending"} */
+
+      create or replace view "warehouse"."main"."gold_authentic_trending__dbt_int" as (
+        select * from read_parquet('s3://github-signal-raw/gold/authentic_trending/data.parquet', union_by_name=False)
+        -- if relation is empty, filter by all columns having null values
+        
+      );
+    
+[0m03:36:42.851317 [debug] [Thread-1 (]: SQL status: OK in 0.008 seconds
+[0m03:36:42.854134 [debug] [Thread-1 (]: Using duckdb connection "model.github_signal.gold_authentic_trending"
+[0m03:36:42.854297 [debug] [Thread-1 (]: On model.github_signal.gold_authentic_trending: /* {"app": "dbt", "dbt_version": "1.11.17", "profile_name": "github_signal", "target_name": "dev", "node_id": "model.github_signal.gold_authentic_trending"} */
+alter view "warehouse"."main"."gold_authentic_trending" rename to "gold_authentic_trending__dbt_backup"
+[0m03:36:42.855107 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m03:36:42.856147 [debug] [Thread-1 (]: Using duckdb connection "model.github_signal.gold_authentic_trending"
+[0m03:36:42.856296 [debug] [Thread-1 (]: On model.github_signal.gold_authentic_trending: /* {"app": "dbt", "dbt_version": "1.11.17", "profile_name": "github_signal", "target_name": "dev", "node_id": "model.github_signal.gold_authentic_trending"} */
+alter view "warehouse"."main"."gold_authentic_trending__dbt_int" rename to "gold_authentic_trending"
+[0m03:36:42.856541 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m03:36:42.861660 [debug] [Thread-1 (]: On model.github_signal.gold_authentic_trending: COMMIT
+[0m03:36:42.861840 [debug] [Thread-1 (]: Using duckdb connection "model.github_signal.gold_authentic_trending"
+[0m03:36:42.861966 [debug] [Thread-1 (]: On model.github_signal.gold_authentic_trending: COMMIT
+[0m03:36:42.866691 [debug] [Thread-1 (]: SQL status: OK in 0.005 seconds
+[0m03:36:42.869132 [debug] [Thread-1 (]: Using duckdb connection "model.github_signal.gold_authentic_trending"
+[0m03:36:42.869285 [debug] [Thread-1 (]: On model.github_signal.gold_authentic_trending: /* {"app": "dbt", "dbt_version": "1.11.17", "profile_name": "github_signal", "target_name": "dev", "node_id": "model.github_signal.gold_authentic_trending"} */
+
+      drop view if exists "warehouse"."main"."gold_authentic_trending__dbt_backup" cascade
+    
+[0m03:36:42.869940 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m03:36:42.870946 [debug] [Thread-1 (]: Using duckdb connection "model.github_signal.gold_authentic_trending"
+[0m03:36:42.871077 [debug] [Thread-1 (]: On model.github_signal.gold_authentic_trending: /* {"app": "dbt", "dbt_version": "1.11.17", "profile_name": "github_signal", "target_name": "dev", "node_id": "model.github_signal.gold_authentic_trending"} */
+
+      drop table if exists "warehouse"."main"."gold_authentic_trending__dbt_tmp" cascade
+    
+[0m03:36:42.871388 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m03:36:42.872302 [debug] [Thread-1 (]: On model.github_signal.gold_authentic_trending: Close
+[0m03:36:42.873217 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'd7a3e4c5-0583-4746-a012-ca349f71f8ae', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ac16e10>]}
+[0m03:36:42.873481 [info ] [Thread-1 (]: 1 of 1 OK created sql external model main.gold_authentic_trending .............. [[32mOK[0m in 0.58s]
+[0m03:36:42.873695 [debug] [Thread-1 (]: Finished running node model.github_signal.gold_authentic_trending
+[0m03:36:42.874222 [debug] [MainThread]: Using duckdb connection "master"
+[0m03:36:42.874336 [debug] [MainThread]: On master: BEGIN
+[0m03:36:42.874435 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m03:36:42.874647 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m03:36:42.874769 [debug] [MainThread]: On master: COMMIT
+[0m03:36:42.874934 [debug] [MainThread]: Using duckdb connection "master"
+[0m03:36:42.875052 [debug] [MainThread]: On master: COMMIT
+[0m03:36:42.875302 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m03:36:42.875509 [debug] [MainThread]: On master: Close
+[0m03:36:42.875685 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m03:36:42.875794 [debug] [MainThread]: Connection 'model.github_signal.gold_authentic_trending' was properly closed.
+[0m03:36:42.875909 [info ] [MainThread]: 
+[0m03:36:42.876033 [info ] [MainThread]: Finished running 1 external model, 1 project hook in 0 hours 0 minutes and 0.88 seconds (0.88s).
+[0m03:36:42.876320 [debug] [MainThread]: Command end result
+[0m03:36:42.892383 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/fredoffei/Documents/github-signal-platform/dbt/target/manifest.json
+[0m03:36:42.893422 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/fredoffei/Documents/github-signal-platform/dbt/target/semantic_manifest.json
+[0m03:36:42.895981 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/fredoffei/Documents/github-signal-platform/dbt/target/run_results.json
+[0m03:36:42.896159 [info ] [MainThread]: 
+[0m03:36:42.896333 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m03:36:42.896449 [info ] [MainThread]: 
+[0m03:36:42.896574 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=2
+[0m03:36:42.898260 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 1.4555663, "process_in_blocks": "0", "process_kernel_time": 0.528638, "process_mem_max_rss": "488079360", "process_out_blocks": "0", "process_user_time": 1.854086}
+[0m03:36:42.898492 [debug] [MainThread]: Command `dbt run` succeeded at 03:36:42.898452 after 1.46 seconds
+[0m03:36:42.898652 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10accbc20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10af3b1b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10af3ae90>]}
+[0m03:36:42.898808 [debug] [MainThread]: Flushing usage events
+[0m03:36:43.439304 [debug] [MainThread]: An error was encountered while trying to flush usage events

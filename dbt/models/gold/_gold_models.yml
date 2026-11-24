@@ -22,3 +22,22 @@ models:
         description: >
           True if the repo has > 20 stars but zero forks/PRs/issues from humans.
           Strong star-bomb signal.
+  - name: gold_authentic_trending
+    description: >
+      Trending repos weighted by actor reputation. Each event's weight is
+      multiplied by the actor's reputation score (profile completeness,
+      followers, public repos, account age). Addresses F2: event-weighted
+      scoring alone can't separate automation bombing from real trending.
+      Hypothesis: reputation-weighted ranking surfaces work that known
+      developers are actually engaging with.
+    columns:
+      - name: repo_id
+        tests:
+          - unique
+          - not_null
+      - name: repo_name
+        tests:
+          - not_null
+      - name: authentic_score
+        tests:
+          - not_null

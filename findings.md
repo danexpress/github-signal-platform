@@ -78,3 +78,89 @@ mislead buyers. The fix requires weighting stars by starrer reputation:
 **Next pipeline iteration:** `silver_actors_enriched` table pulling account 
 metadata from the GitHub REST API, feeding a `gold_authentic_trending` 
 reputation-weighted score.
+
+## F2 — Weighted event scoring is necessary but not sufficient
+
+**Date:** 2026-11-24  
+**Data window:** 2026-10-01, single 24-hour slice  
+**Context:** Addresses F1's finding by weighting fork/PR/issue activity 
+higher than raw stars.
+
+### What happened
+A simple composite trending score (stars×3 + forks×5 + PR_opens×10 + 
+issue_opens×2 + releases×15 + PR_reviews×4) successfully pushed all 10 of 
+F1's drive-by star repos out of the top 10 — they now occupy ranks 18-89.
+
+### But the new top 10 isn't real trending either
+| Rank | Repo | Signal | Pattern |
+|------|------|--------|---------|
+| 1 | plaiiin-hq/market-archive | 40 releases, 0 human engagement | release bot |
+| 2 | NousResearch/hermes-agent | 14 stars, 4 forks, 39 PRs, 12 reviews | real activity |
+| 3 | aaliyahsolace5-aiDATAOPS/cobol | 48 PRs, 14 issues, 0 stars | bulk-PR bot |
+| 4 | merge-demo/mergequeue-bazel | 41 PRs, no stars | test harness |
+| ... | | | |
+| 10 | PostHog/posthog | 1 star, 13 PRs, 30 reviews | real activity |
+
+3 of 10 look human-driven. The rest are automation.
+
+### Why known heavyweights still don't rank
+- microsoft/vscode: rank 102
+- vercel/next.js: rank 331
+- anthropics/claude-code: rank 361
+- huggingface/transformers: rank 1267
+
+These projects get *consistent low-volume high-quality* activity. Bursty 
+automated activity outscores sustained human interest under any pure 
+event-count scheme, no matter how the events are weighted.
+
+### Implication
+**Event-count weighting alone cannot separate trending from automation.** 
+Raw stars → drive-by noise. Weighted events → automation bombing. The 
+missing ingredient is who-is-doing-the-action — actor reputation, account 
+age, prior activity patterns.
+
+### Next iteration
+`gold_authentic_trending`: join silver.events to silver.actors_enriched 
+(already built), weight every event by starrer/forker/PR-author reputation 
+score. Hypothesis: real trending surfaces when the SAME events are weighted 
+by whose signal they are, not by what type of event they are.
+
+## F3 — Reputation and diversity constraints beat raw weighting, but 24-hour windows remain too narrow
+
+**Date:** 2026-11-24  
+**Context:** Addresses F2's finding (event weighting alone is fooled by automation bombing).
+
+### What was built
+`gold_authentic_trending` — each event weighted by both event-type importance 
+AND the acting user's reputation score (from silver.actors_enriched). Each 
+actor's contribution to a single repo is capped at 20 points to prevent 
+single-actor domination.
+
+### What happened to the pathological cases
+F2's top 10 automation-bomb repos (workingdir/ornadb, plaiiin-hq/market-archive, 
+tirzzbuild/genetik, etc.) all collapsed to rank >1000. The cap enforces that 
+any top-ranked repo requires multiple distinct human actors.
+
+### What happened to known heavyweights
+Known projects climbed significantly:
+- microsoft/winget-pkgs: unranked → #4
+- microsoft/onnxruntime: #131 → #36
+- microsoft/vscode: #185 → #65
+
+### The caveats this revealed
+1. **Enrichment coverage is partial.** Most actors (`avg_actor_reputation ≈ 0.1`) 
+   fell through to the unenriched baseline. The diversity cap did most of the 
+   work; reputation barely contributed.
+2. **Concentration persists under the cap.** `top_actor_share` for top-ranked 
+   repos still runs 0.75-0.99 — one actor dominates the raw contribution before 
+   capping. The cap flattens the final score; it doesn't fix the underlying skew.
+3. **24-hour windows undersample real trending.** Sustained-interest projects 
+   (anthropics/*, vercel/next.js) spread activity over weeks. In any single 
+   day they register fewer events than a project in a concentrated burst. 
+   Commercial trending products (OSS Insight, Runa ROSS) use 7-30 day windows.
+
+### Implication for the pipeline
+Three progressive attempts at trending detection, three honest limits. 
+The architecture is the right one; the data window is too narrow to fully 
+exploit it. Logical V0.4: backfill 7-30 days of GH Archive data, rerun the 
+same models, see which signals strengthen vs persist.
